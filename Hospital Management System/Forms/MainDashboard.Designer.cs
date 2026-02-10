@@ -38,7 +38,7 @@
             this.patientManage_btn = new System.Windows.Forms.Button();
             this.doctorManage_btn = new System.Windows.Forms.Button();
             this.dasboard_btn = new System.Windows.Forms.Button();
-            this.dashhboradControl1 = new Hospital_Management_System.Control.DashhboradControl();
+            this.doctorManagementControl1 = new Hospital_Management_System.Control.DoctorManagementControl();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -164,19 +164,19 @@
             this.dasboard_btn.Text = "Dashboard";
             this.dasboard_btn.UseVisualStyleBackColor = false;
             // 
-            // dashhboradControl1
+            // doctorManagementControl1
             // 
-            this.dashhboradControl1.Location = new System.Drawing.Point(256, 76);
-            this.dashhboradControl1.Name = "dashhboradControl1";
-            this.dashhboradControl1.Size = new System.Drawing.Size(1182, 724);
-            this.dashhboradControl1.TabIndex = 3;
+            this.doctorManagementControl1.Location = new System.Drawing.Point(256, 76);
+            this.doctorManagementControl1.Name = "doctorManagementControl1";
+            this.doctorManagementControl1.Size = new System.Drawing.Size(1190, 716);
+            this.doctorManagementControl1.TabIndex = 3;
             // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1450, 800);
-            this.Controls.Add(this.dashhboradControl1);
+            this.Controls.Add(this.doctorManagementControl1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -202,6 +202,6 @@
         private System.Windows.Forms.Button checkInOutManage_btn;
         private System.Windows.Forms.Button patientManage_btn;
         private System.Windows.Forms.Button doctorManage_btn;
-        private Control.DashhboradControl dashhboradControl1;
+        private Control.DoctorManagementControl doctorManagementControl1;
     }
 }

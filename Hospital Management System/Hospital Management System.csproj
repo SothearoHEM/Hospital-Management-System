@@ -67,6 +67,12 @@
     <Compile Include="Control\DashhboradControl.Designer.cs">
       <DependentUpon>DashhboradControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\DoctorManagementControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\DoctorManagementControl.Designer.cs">
+      <DependentUpon>DoctorManagementControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Control\DashhboradControl.resx">
       <DependentUpon>DashhboradControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\DoctorManagementControl.resx">
+      <DependentUpon>DoctorManagementControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
