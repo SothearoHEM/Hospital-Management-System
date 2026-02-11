@@ -61,6 +61,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Control\CheckInControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\CheckInControl.Designer.cs">
+      <DependentUpon>CheckInControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\CheckOutControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\CheckOutControl.Designer.cs">
+      <DependentUpon>CheckOutControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\DashhboradControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -72,6 +84,18 @@
     </Compile>
     <Compile Include="Control\DoctorManagementControl.Designer.cs">
       <DependentUpon>DoctorManagementControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\PatientCheckInOutControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\PatientCheckInOutControl.Designer.cs">
+      <DependentUpon>PatientCheckInOutControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\PatientManagementControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\PatientManagementControl.Designer.cs">
+      <DependentUpon>PatientManagementControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
@@ -87,11 +111,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Control\CheckInControl.resx">
+      <DependentUpon>CheckInControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\CheckOutControl.resx">
+      <DependentUpon>CheckOutControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\DashhboradControl.resx">
       <DependentUpon>DashhboradControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\DoctorManagementControl.resx">
       <DependentUpon>DoctorManagementControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\PatientCheckInOutControl.resx">
+      <DependentUpon>PatientCheckInOutControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\PatientManagementControl.resx">
+      <DependentUpon>PatientManagementControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
