@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.checkIn_btn = new System.Windows.Forms.Button();
+            this.checkOut_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.checkInControl1 = new Hospital_Management_System.Control.CheckInControl();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -40,21 +40,37 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.checkIn_btn);
+            this.panel1.Controls.Add(this.checkOut_btn);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(11, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1168, 47);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // checkIn_btn
             // 
-            this.panel2.Controls.Add(this.checkInControl1);
-            this.panel2.Location = new System.Drawing.Point(9, 61);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1169, 644);
-            this.panel2.TabIndex = 1;
+            this.checkIn_btn.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.checkIn_btn.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkIn_btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.checkIn_btn.Location = new System.Drawing.Point(755, 3);
+            this.checkIn_btn.Name = "checkIn_btn";
+            this.checkIn_btn.Size = new System.Drawing.Size(197, 40);
+            this.checkIn_btn.TabIndex = 26;
+            this.checkIn_btn.Text = "Check In";
+            this.checkIn_btn.UseVisualStyleBackColor = false;
+            // 
+            // checkOut_btn
+            // 
+            this.checkOut_btn.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.checkOut_btn.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkOut_btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.checkOut_btn.Location = new System.Drawing.Point(958, 3);
+            this.checkOut_btn.Name = "checkOut_btn";
+            this.checkOut_btn.Size = new System.Drawing.Size(197, 40);
+            this.checkOut_btn.TabIndex = 25;
+            this.checkOut_btn.Text = "Check Out";
+            this.checkOut_btn.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -66,29 +82,13 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Patient Check In / Out";
             // 
-            // button4
+            // panel2
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.button4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button4.Location = new System.Drawing.Point(958, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(197, 40);
-            this.button4.TabIndex = 25;
-            this.button4.Text = "Check Out";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(755, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(197, 40);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "Check In";
-            this.button1.UseVisualStyleBackColor = false;
+            this.panel2.Controls.Add(this.checkInControl1);
+            this.panel2.Location = new System.Drawing.Point(9, 61);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1169, 644);
+            this.panel2.TabIndex = 1;
             // 
             // checkInControl1
             // 
@@ -117,8 +117,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button checkIn_btn;
+        private System.Windows.Forms.Button checkOut_btn;
         private CheckInControl checkInControl1;
     }
 }

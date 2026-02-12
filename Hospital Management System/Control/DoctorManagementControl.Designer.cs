@@ -32,34 +32,34 @@
             this.label1 = new System.Windows.Forms.Label();
             this.doctorGridView = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.comboDoctorGender = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.doctorImportImg_btn = new System.Windows.Forms.Button();
+            this.clearDoctor_btn = new System.Windows.Forms.Button();
+            this.deleteDoctor_btn = new System.Windows.Forms.Button();
+            this.updateDoctor_btn = new System.Windows.Forms.Button();
+            this.addDoctor_btn = new System.Windows.Forms.Button();
+            this.pictureDoctor = new System.Windows.Forms.PictureBox();
+            this.comboDoctorStatus = new System.Windows.Forms.ComboBox();
+            this.comboDoctorSpecialization = new System.Windows.Forms.ComboBox();
+            this.textDoctorEmail = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textDoctorPhoneNumber = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textDoctorLastName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textDoctorLicenseNumber = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textDoctorFirstName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textDoctorID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.doctorGridView)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDoctor)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -93,121 +93,149 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.comboBox3);
+            this.panel2.Controls.Add(this.comboDoctorGender);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.button5);
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.comboBox1);
-            this.panel2.Controls.Add(this.textBox8);
+            this.panel2.Controls.Add(this.doctorImportImg_btn);
+            this.panel2.Controls.Add(this.clearDoctor_btn);
+            this.panel2.Controls.Add(this.deleteDoctor_btn);
+            this.panel2.Controls.Add(this.updateDoctor_btn);
+            this.panel2.Controls.Add(this.addDoctor_btn);
+            this.panel2.Controls.Add(this.pictureDoctor);
+            this.panel2.Controls.Add(this.comboDoctorStatus);
+            this.panel2.Controls.Add(this.comboDoctorSpecialization);
+            this.panel2.Controls.Add(this.textDoctorEmail);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.textBox6);
+            this.panel2.Controls.Add(this.textDoctorPhoneNumber);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.textDoctorLastName);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.textBox5);
+            this.panel2.Controls.Add(this.textDoctorLicenseNumber);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.textBox4);
+            this.panel2.Controls.Add(this.textDoctorFirstName);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.textDoctorID);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(11, 372);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1168, 334);
             this.panel2.TabIndex = 1;
             // 
-            // button5
+            // comboDoctorGender
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button5.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button5.Location = new System.Drawing.Point(829, 183);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(111, 36);
-            this.button5.TabIndex = 25;
-            this.button5.Text = "Import";
-            this.button5.UseVisualStyleBackColor = false;
+            this.comboDoctorGender.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboDoctorGender.FormattingEnabled = true;
+            this.comboDoctorGender.Location = new System.Drawing.Point(976, 49);
+            this.comboDoctorGender.Name = "comboDoctorGender";
+            this.comboDoctorGender.Size = new System.Drawing.Size(157, 35);
+            this.comboDoctorGender.TabIndex = 27;
             // 
-            // button4
+            // label10
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.button4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button4.Location = new System.Drawing.Point(466, 276);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(197, 40);
-            this.button4.TabIndex = 24;
-            this.button4.Text = "Clear";
-            this.button4.UseVisualStyleBackColor = false;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(971, 21);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(82, 27);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Gender";
             // 
-            // button3
+            // doctorImportImg_btn
             // 
-            this.button3.BackColor = System.Drawing.Color.IndianRed;
-            this.button3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(691, 276);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(197, 40);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = false;
+            this.doctorImportImg_btn.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.doctorImportImg_btn.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.doctorImportImg_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.doctorImportImg_btn.Location = new System.Drawing.Point(829, 183);
+            this.doctorImportImg_btn.Name = "doctorImportImg_btn";
+            this.doctorImportImg_btn.Size = new System.Drawing.Size(111, 36);
+            this.doctorImportImg_btn.TabIndex = 25;
+            this.doctorImportImg_btn.Text = "Import";
+            this.doctorImportImg_btn.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // clearDoctor_btn
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.button2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(244, 276);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(197, 40);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Update";
-            this.button2.UseVisualStyleBackColor = false;
+            this.clearDoctor_btn.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.clearDoctor_btn.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearDoctor_btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.clearDoctor_btn.Location = new System.Drawing.Point(466, 276);
+            this.clearDoctor_btn.Name = "clearDoctor_btn";
+            this.clearDoctor_btn.Size = new System.Drawing.Size(197, 40);
+            this.clearDoctor_btn.TabIndex = 24;
+            this.clearDoctor_btn.Text = "Clear";
+            this.clearDoctor_btn.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // deleteDoctor_btn
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(24, 276);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(197, 40);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Add Doctor";
-            this.button1.UseVisualStyleBackColor = false;
+            this.deleteDoctor_btn.BackColor = System.Drawing.Color.IndianRed;
+            this.deleteDoctor_btn.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteDoctor_btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.deleteDoctor_btn.Location = new System.Drawing.Point(691, 276);
+            this.deleteDoctor_btn.Name = "deleteDoctor_btn";
+            this.deleteDoctor_btn.Size = new System.Drawing.Size(197, 40);
+            this.deleteDoctor_btn.TabIndex = 23;
+            this.deleteDoctor_btn.Text = "Delete";
+            this.deleteDoctor_btn.UseVisualStyleBackColor = false;
             // 
-            // comboBox2
+            // updateDoctor_btn
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(340, 217);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(285, 35);
-            this.comboBox2.TabIndex = 19;
+            this.updateDoctor_btn.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.updateDoctor_btn.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateDoctor_btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.updateDoctor_btn.Location = new System.Drawing.Point(244, 276);
+            this.updateDoctor_btn.Name = "updateDoctor_btn";
+            this.updateDoctor_btn.Size = new System.Drawing.Size(197, 40);
+            this.updateDoctor_btn.TabIndex = 22;
+            this.updateDoctor_btn.Text = "Update";
+            this.updateDoctor_btn.UseVisualStyleBackColor = false;
             // 
-            // comboBox1
+            // addDoctor_btn
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(24, 133);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(285, 35);
-            this.comboBox1.TabIndex = 18;
+            this.addDoctor_btn.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.addDoctor_btn.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addDoctor_btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.addDoctor_btn.Location = new System.Drawing.Point(24, 276);
+            this.addDoctor_btn.Name = "addDoctor_btn";
+            this.addDoctor_btn.Size = new System.Drawing.Size(197, 40);
+            this.addDoctor_btn.TabIndex = 21;
+            this.addDoctor_btn.Text = "Add Doctor";
+            this.addDoctor_btn.UseVisualStyleBackColor = false;
             // 
-            // textBox8
+            // pictureDoctor
             // 
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(655, 133);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(285, 33);
-            this.textBox8.TabIndex = 17;
+            this.pictureDoctor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureDoctor.Location = new System.Drawing.Point(976, 123);
+            this.pictureDoctor.Name = "pictureDoctor";
+            this.pictureDoctor.Size = new System.Drawing.Size(157, 193);
+            this.pictureDoctor.TabIndex = 20;
+            this.pictureDoctor.TabStop = false;
+            // 
+            // comboDoctorStatus
+            // 
+            this.comboDoctorStatus.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboDoctorStatus.FormattingEnabled = true;
+            this.comboDoctorStatus.Location = new System.Drawing.Point(340, 217);
+            this.comboDoctorStatus.Name = "comboDoctorStatus";
+            this.comboDoctorStatus.Size = new System.Drawing.Size(285, 35);
+            this.comboDoctorStatus.TabIndex = 19;
+            // 
+            // comboDoctorSpecialization
+            // 
+            this.comboDoctorSpecialization.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboDoctorSpecialization.FormattingEnabled = true;
+            this.comboDoctorSpecialization.Location = new System.Drawing.Point(24, 133);
+            this.comboDoctorSpecialization.Name = "comboDoctorSpecialization";
+            this.comboDoctorSpecialization.Size = new System.Drawing.Size(285, 35);
+            this.comboDoctorSpecialization.TabIndex = 18;
+            // 
+            // textDoctorEmail
+            // 
+            this.textDoctorEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textDoctorEmail.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDoctorEmail.Location = new System.Drawing.Point(655, 133);
+            this.textDoctorEmail.Name = "textDoctorEmail";
+            this.textDoctorEmail.Size = new System.Drawing.Size(285, 33);
+            this.textDoctorEmail.TabIndex = 17;
             // 
             // label9
             // 
@@ -229,14 +257,14 @@
             this.label8.TabIndex = 14;
             this.label8.Text = "Status";
             // 
-            // textBox6
+            // textDoctorPhoneNumber
             // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(340, 135);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(285, 33);
-            this.textBox6.TabIndex = 13;
+            this.textDoctorPhoneNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textDoctorPhoneNumber.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDoctorPhoneNumber.Location = new System.Drawing.Point(340, 135);
+            this.textDoctorPhoneNumber.Name = "textDoctorPhoneNumber";
+            this.textDoctorPhoneNumber.Size = new System.Drawing.Size(285, 33);
+            this.textDoctorPhoneNumber.TabIndex = 13;
             // 
             // label7
             // 
@@ -248,14 +276,14 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Phone Number";
             // 
-            // textBox3
+            // textDoctorLastName
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(655, 51);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(285, 33);
-            this.textBox3.TabIndex = 11;
+            this.textDoctorLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textDoctorLastName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDoctorLastName.Location = new System.Drawing.Point(655, 51);
+            this.textDoctorLastName.Name = "textDoctorLastName";
+            this.textDoctorLastName.Size = new System.Drawing.Size(285, 33);
+            this.textDoctorLastName.TabIndex = 11;
             // 
             // label4
             // 
@@ -267,14 +295,14 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Last Name *";
             // 
-            // textBox5
+            // textDoctorLicenseNumber
             // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(24, 218);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(285, 33);
-            this.textBox5.TabIndex = 9;
+            this.textDoctorLicenseNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textDoctorLicenseNumber.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDoctorLicenseNumber.Location = new System.Drawing.Point(24, 218);
+            this.textDoctorLicenseNumber.Name = "textDoctorLicenseNumber";
+            this.textDoctorLicenseNumber.Size = new System.Drawing.Size(285, 33);
+            this.textDoctorLicenseNumber.TabIndex = 9;
             // 
             // label6
             // 
@@ -286,14 +314,14 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "License Number *";
             // 
-            // textBox4
+            // textDoctorFirstName
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(340, 51);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(285, 33);
-            this.textBox4.TabIndex = 7;
+            this.textDoctorFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textDoctorFirstName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDoctorFirstName.Location = new System.Drawing.Point(340, 51);
+            this.textDoctorFirstName.Name = "textDoctorFirstName";
+            this.textDoctorFirstName.Size = new System.Drawing.Size(285, 33);
+            this.textDoctorFirstName.TabIndex = 7;
             // 
             // label5
             // 
@@ -315,14 +343,14 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Specialization *";
             // 
-            // textBox1
+            // textDoctorID
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(24, 51);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(285, 33);
-            this.textBox1.TabIndex = 1;
+            this.textDoctorID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textDoctorID.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDoctorID.Location = new System.Drawing.Point(24, 51);
+            this.textDoctorID.Name = "textDoctorID";
+            this.textDoctorID.Size = new System.Drawing.Size(285, 33);
+            this.textDoctorID.TabIndex = 1;
             // 
             // label2
             // 
@@ -333,34 +361,6 @@
             this.label2.Size = new System.Drawing.Size(120, 27);
             this.label2.TabIndex = 0;
             this.label2.Text = "Doctor ID *";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(976, 123);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(157, 193);
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(971, 21);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 27);
-            this.label10.TabIndex = 26;
-            this.label10.Text = "Gender";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(976, 49);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(157, 35);
-            this.comboBox3.TabIndex = 27;
             // 
             // DoctorManagementControl
             // 
@@ -375,7 +375,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.doctorGridView)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDoctor)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -386,29 +386,29 @@
         private System.Windows.Forms.DataGridView doctorGridView;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textDoctorEmail;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textDoctorPhoneNumber;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textDoctorLastName;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textDoctorLicenseNumber;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textDoctorFirstName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textDoctorID;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Button addDoctor_btn;
+        private System.Windows.Forms.PictureBox pictureDoctor;
+        private System.Windows.Forms.ComboBox comboDoctorStatus;
+        private System.Windows.Forms.ComboBox comboDoctorSpecialization;
+        private System.Windows.Forms.Button doctorImportImg_btn;
+        private System.Windows.Forms.Button clearDoctor_btn;
+        private System.Windows.Forms.Button deleteDoctor_btn;
+        private System.Windows.Forms.Button updateDoctor_btn;
+        private System.Windows.Forms.ComboBox comboDoctorGender;
         private System.Windows.Forms.Label label10;
     }
 }

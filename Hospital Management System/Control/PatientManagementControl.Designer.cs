@@ -32,32 +32,32 @@
             this.label1 = new System.Windows.Forms.Label();
             this.patientGridView = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textPatientMedicalNote = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textPatientAllergies = new System.Windows.Forms.TextBox();
+            this.comboPatientBloodType = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textPatientEmail = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.patientDOB = new System.Windows.Forms.DateTimePicker();
+            this.comboPatientGender = new System.Windows.Forms.ComboBox();
+            this.clearPatient_btn = new System.Windows.Forms.Button();
+            this.deletePatient_btn = new System.Windows.Forms.Button();
+            this.updatePatient_btn = new System.Windows.Forms.Button();
+            this.addPatient_btn = new System.Windows.Forms.Button();
+            this.textPatientPhoneNumber = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textPatientLastName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textPatientAddress = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textPatientFirstName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textPatientID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientGridView)).BeginInit();
             this.panel2.SuspendLayout();
@@ -95,31 +95,31 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.textBox7);
+            this.panel2.Controls.Add(this.textPatientMedicalNote);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.textBox6);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.textPatientAllergies);
+            this.panel2.Controls.Add(this.comboPatientBloodType);
             this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.textPatientEmail);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.comboBox3);
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.textBox8);
+            this.panel2.Controls.Add(this.patientDOB);
+            this.panel2.Controls.Add(this.comboPatientGender);
+            this.panel2.Controls.Add(this.clearPatient_btn);
+            this.panel2.Controls.Add(this.deletePatient_btn);
+            this.panel2.Controls.Add(this.updatePatient_btn);
+            this.panel2.Controls.Add(this.addPatient_btn);
+            this.panel2.Controls.Add(this.textPatientPhoneNumber);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.textPatientLastName);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.textBox5);
+            this.panel2.Controls.Add(this.textPatientAddress);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.textBox4);
+            this.panel2.Controls.Add(this.textPatientFirstName);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.textPatientID);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(8, 351);
             this.panel2.Name = "panel2";
@@ -127,62 +127,147 @@
             this.panel2.TabIndex = 2;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // button4
+            // textPatientMedicalNote
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.button4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button4.Location = new System.Drawing.Point(936, 245);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(197, 40);
-            this.button4.TabIndex = 24;
-            this.button4.Text = "Clear";
-            this.button4.UseVisualStyleBackColor = false;
+            this.textPatientMedicalNote.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textPatientMedicalNote.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPatientMedicalNote.Location = new System.Drawing.Point(603, 188);
+            this.textPatientMedicalNote.Multiline = true;
+            this.textPatientMedicalNote.Name = "textPatientMedicalNote";
+            this.textPatientMedicalNote.Size = new System.Drawing.Size(250, 143);
+            this.textPatientMedicalNote.TabIndex = 33;
             // 
-            // button3
+            // label12
             // 
-            this.button3.BackColor = System.Drawing.Color.IndianRed;
-            this.button3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(936, 291);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(197, 40);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = false;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(598, 162);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(223, 27);
+            this.label12.TabIndex = 32;
+            this.label12.Text = "Medical History Notes";
             // 
-            // button2
+            // textPatientAllergies
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.button2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(936, 199);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(197, 40);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Update";
-            this.button2.UseVisualStyleBackColor = false;
+            this.textPatientAllergies.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textPatientAllergies.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPatientAllergies.Location = new System.Drawing.Point(311, 188);
+            this.textPatientAllergies.Multiline = true;
+            this.textPatientAllergies.Name = "textPatientAllergies";
+            this.textPatientAllergies.Size = new System.Drawing.Size(250, 143);
+            this.textPatientAllergies.TabIndex = 31;
             // 
-            // button1
+            // comboPatientBloodType
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(936, 155);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(197, 40);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Add Patient";
-            this.button1.UseVisualStyleBackColor = false;
+            this.comboPatientBloodType.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboPatientBloodType.FormattingEnabled = true;
+            this.comboPatientBloodType.Location = new System.Drawing.Point(603, 116);
+            this.comboPatientBloodType.Name = "comboPatientBloodType";
+            this.comboPatientBloodType.Size = new System.Drawing.Size(250, 35);
+            this.comboPatientBloodType.TabIndex = 30;
             // 
-            // textBox8
+            // label11
             // 
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(311, 116);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(250, 33);
-            this.textBox8.TabIndex = 17;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(598, 86);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(121, 27);
+            this.label11.TabIndex = 29;
+            this.label11.Text = "Blood Type";
+            // 
+            // textPatientEmail
+            // 
+            this.textPatientEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textPatientEmail.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPatientEmail.Location = new System.Drawing.Point(883, 116);
+            this.textPatientEmail.Name = "textPatientEmail";
+            this.textPatientEmail.Size = new System.Drawing.Size(250, 33);
+            this.textPatientEmail.TabIndex = 28;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(878, 86);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(146, 27);
+            this.label10.TabIndex = 27;
+            this.label10.Text = "Email Address";
+            // 
+            // patientDOB
+            // 
+            this.patientDOB.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patientDOB.Location = new System.Drawing.Point(883, 41);
+            this.patientDOB.Name = "patientDOB";
+            this.patientDOB.Size = new System.Drawing.Size(250, 33);
+            this.patientDOB.TabIndex = 26;
+            // 
+            // comboPatientGender
+            // 
+            this.comboPatientGender.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboPatientGender.FormattingEnabled = true;
+            this.comboPatientGender.Location = new System.Drawing.Point(24, 114);
+            this.comboPatientGender.Name = "comboPatientGender";
+            this.comboPatientGender.Size = new System.Drawing.Size(250, 35);
+            this.comboPatientGender.TabIndex = 25;
+            // 
+            // clearPatient_btn
+            // 
+            this.clearPatient_btn.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.clearPatient_btn.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearPatient_btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.clearPatient_btn.Location = new System.Drawing.Point(936, 245);
+            this.clearPatient_btn.Name = "clearPatient_btn";
+            this.clearPatient_btn.Size = new System.Drawing.Size(197, 40);
+            this.clearPatient_btn.TabIndex = 24;
+            this.clearPatient_btn.Text = "Clear";
+            this.clearPatient_btn.UseVisualStyleBackColor = false;
+            // 
+            // deletePatient_btn
+            // 
+            this.deletePatient_btn.BackColor = System.Drawing.Color.IndianRed;
+            this.deletePatient_btn.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deletePatient_btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.deletePatient_btn.Location = new System.Drawing.Point(936, 291);
+            this.deletePatient_btn.Name = "deletePatient_btn";
+            this.deletePatient_btn.Size = new System.Drawing.Size(197, 40);
+            this.deletePatient_btn.TabIndex = 23;
+            this.deletePatient_btn.Text = "Delete";
+            this.deletePatient_btn.UseVisualStyleBackColor = false;
+            // 
+            // updatePatient_btn
+            // 
+            this.updatePatient_btn.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.updatePatient_btn.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updatePatient_btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.updatePatient_btn.Location = new System.Drawing.Point(936, 199);
+            this.updatePatient_btn.Name = "updatePatient_btn";
+            this.updatePatient_btn.Size = new System.Drawing.Size(197, 40);
+            this.updatePatient_btn.TabIndex = 22;
+            this.updatePatient_btn.Text = "Update";
+            this.updatePatient_btn.UseVisualStyleBackColor = false;
+            // 
+            // addPatient_btn
+            // 
+            this.addPatient_btn.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.addPatient_btn.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addPatient_btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.addPatient_btn.Location = new System.Drawing.Point(936, 155);
+            this.addPatient_btn.Name = "addPatient_btn";
+            this.addPatient_btn.Size = new System.Drawing.Size(197, 40);
+            this.addPatient_btn.TabIndex = 21;
+            this.addPatient_btn.Text = "Add Patient";
+            this.addPatient_btn.UseVisualStyleBackColor = false;
+            // 
+            // textPatientPhoneNumber
+            // 
+            this.textPatientPhoneNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textPatientPhoneNumber.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPatientPhoneNumber.Location = new System.Drawing.Point(311, 116);
+            this.textPatientPhoneNumber.Name = "textPatientPhoneNumber";
+            this.textPatientPhoneNumber.Size = new System.Drawing.Size(250, 33);
+            this.textPatientPhoneNumber.TabIndex = 17;
             // 
             // label9
             // 
@@ -204,14 +289,24 @@
             this.label8.TabIndex = 14;
             this.label8.Text = "Known Allergies";
             // 
-            // textBox3
+            // label7
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(603, 43);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(250, 33);
-            this.textBox3.TabIndex = 11;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(19, 84);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(97, 27);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Gender *";
+            // 
+            // textPatientLastName
+            // 
+            this.textPatientLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textPatientLastName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPatientLastName.Location = new System.Drawing.Point(603, 43);
+            this.textPatientLastName.Name = "textPatientLastName";
+            this.textPatientLastName.Size = new System.Drawing.Size(250, 33);
+            this.textPatientLastName.TabIndex = 11;
             // 
             // label4
             // 
@@ -223,15 +318,15 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Last Name *";
             // 
-            // textBox5
+            // textPatientAddress
             // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(24, 188);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(250, 143);
-            this.textBox5.TabIndex = 9;
+            this.textPatientAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textPatientAddress.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPatientAddress.Location = new System.Drawing.Point(24, 188);
+            this.textPatientAddress.Multiline = true;
+            this.textPatientAddress.Name = "textPatientAddress";
+            this.textPatientAddress.Size = new System.Drawing.Size(250, 143);
+            this.textPatientAddress.TabIndex = 9;
             // 
             // label6
             // 
@@ -243,14 +338,14 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "Address";
             // 
-            // textBox4
+            // textPatientFirstName
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(311, 41);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(250, 33);
-            this.textBox4.TabIndex = 7;
+            this.textPatientFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textPatientFirstName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPatientFirstName.Location = new System.Drawing.Point(311, 41);
+            this.textPatientFirstName.Name = "textPatientFirstName";
+            this.textPatientFirstName.Size = new System.Drawing.Size(250, 33);
+            this.textPatientFirstName.TabIndex = 7;
             // 
             // label5
             // 
@@ -272,14 +367,14 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Date of Birth *";
             // 
-            // textBox1
+            // textPatientID
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(24, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 33);
-            this.textBox1.TabIndex = 1;
+            this.textPatientID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textPatientID.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPatientID.Location = new System.Drawing.Point(24, 41);
+            this.textPatientID.Name = "textPatientID";
+            this.textPatientID.Size = new System.Drawing.Size(250, 33);
+            this.textPatientID.TabIndex = 1;
             // 
             // label2
             // 
@@ -290,101 +385,6 @@
             this.label2.Size = new System.Drawing.Size(119, 27);
             this.label2.TabIndex = 0;
             this.label2.Text = "Patient ID *";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(19, 84);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 27);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Gender *";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(24, 114);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(250, 35);
-            this.comboBox3.TabIndex = 25;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(883, 41);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(250, 33);
-            this.dateTimePicker1.TabIndex = 26;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(883, 116);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(250, 33);
-            this.textBox2.TabIndex = 28;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(878, 86);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(146, 27);
-            this.label10.TabIndex = 27;
-            this.label10.Text = "Email Address";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(603, 116);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(250, 35);
-            this.comboBox1.TabIndex = 30;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(598, 86);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(121, 27);
-            this.label11.TabIndex = 29;
-            this.label11.Text = "Blood Type";
-            // 
-            // textBox6
-            // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(311, 188);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(250, 143);
-            this.textBox6.TabIndex = 31;
-            // 
-            // textBox7
-            // 
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(603, 188);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(250, 143);
-            this.textBox7.TabIndex = 33;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(598, 162);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(223, 27);
-            this.label12.TabIndex = 32;
-            this.label12.Text = "Medical History Notes";
             // 
             // PatientManagementControl
             // 
@@ -409,31 +409,31 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView patientGridView;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Button clearPatient_btn;
+        private System.Windows.Forms.Button deletePatient_btn;
+        private System.Windows.Forms.Button updatePatient_btn;
+        private System.Windows.Forms.Button addPatient_btn;
+        private System.Windows.Forms.TextBox textPatientPhoneNumber;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textPatientLastName;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textPatientAddress;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textPatientFirstName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textPatientID;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboPatientGender;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textPatientMedicalNote;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textPatientAllergies;
+        private System.Windows.Forms.ComboBox comboPatientBloodType;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textPatientEmail;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker patientDOB;
     }
 }
