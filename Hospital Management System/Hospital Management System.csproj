@@ -163,13 +163,6 @@
     <None Include="Resources\hospital_13298007.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database\hospital_db.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Database\hospital_db_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>hospital_db.mdf</DependentUpon>
-    </Content>
     <None Include="Resources\empathy_2612496.png" />
     <None Include="Resources\clinic_15234431.png" />
     <None Include="Resources\doctor_2785482.png" />
@@ -185,6 +178,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Database\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

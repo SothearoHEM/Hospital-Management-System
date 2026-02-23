@@ -21,5 +21,44 @@ namespace Hospital_Management_System.Forms
         {
             Application.Exit();
         }
+
+        private void dasboard_btn_Click(object sender, EventArgs e)
+        {
+            dashhboradControl1.Visible = true;
+            doctorManagementControl1.Visible = false;
+            patientManagementControl1.Visible = false;
+            patientCheckInOutControl1.Visible = false;
+        }
+
+        private void doctorManage_btn_Click(object sender, EventArgs e)
+        {
+            dashhboradControl1.Visible = false;
+            doctorManagementControl1.Visible = true;
+            patientManagementControl1.Visible = false;
+            patientCheckInOutControl1.Visible = false;
+        }
+
+        private void patientManage_btn_Click(object sender, EventArgs e)
+        {
+            dashhboradControl1.Visible = false;
+            doctorManagementControl1.Visible = false;
+            patientManagementControl1.Visible = true;
+            patientCheckInOutControl1.Visible = false;
+        }
+
+        private void checkInOutManage_btn_Click(object sender, EventArgs e)
+        {
+            dashhboradControl1.Visible = false;
+            doctorManagementControl1.Visible = false;
+            patientManagementControl1.Visible = false;
+            patientCheckInOutControl1.Visible = true;
+        }
+
+        private void logOut_btn_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Hide();
+        }
     }
 }

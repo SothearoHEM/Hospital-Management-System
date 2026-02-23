@@ -38,6 +38,9 @@
             this.patientManage_btn = new System.Windows.Forms.Button();
             this.doctorManage_btn = new System.Windows.Forms.Button();
             this.dasboard_btn = new System.Windows.Forms.Button();
+            this.dashhboradControl1 = new Hospital_Management_System.Control.DashhboradControl();
+            this.doctorManagementControl1 = new Hospital_Management_System.Control.DoctorManagementControl();
+            this.patientManagementControl1 = new Hospital_Management_System.Control.PatientManagementControl();
             this.patientCheckInOutControl1 = new Hospital_Management_System.Control.PatientCheckInOutControl();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -103,6 +106,7 @@
             this.logOut_btn.TabIndex = 5;
             this.logOut_btn.Text = "LogOut";
             this.logOut_btn.UseVisualStyleBackColor = false;
+            this.logOut_btn.Click += new System.EventHandler(this.logOut_btn_Click);
             // 
             // report_btn
             // 
@@ -127,6 +131,7 @@
             this.checkInOutManage_btn.TabIndex = 3;
             this.checkInOutManage_btn.Text = "Check In/Out Management";
             this.checkInOutManage_btn.UseVisualStyleBackColor = false;
+            this.checkInOutManage_btn.Click += new System.EventHandler(this.checkInOutManage_btn_Click);
             // 
             // patientManage_btn
             // 
@@ -139,6 +144,7 @@
             this.patientManage_btn.TabIndex = 2;
             this.patientManage_btn.Text = "Patients Management";
             this.patientManage_btn.UseVisualStyleBackColor = false;
+            this.patientManage_btn.Click += new System.EventHandler(this.patientManage_btn_Click);
             // 
             // doctorManage_btn
             // 
@@ -151,6 +157,7 @@
             this.doctorManage_btn.TabIndex = 1;
             this.doctorManage_btn.Text = "Doctors Management";
             this.doctorManage_btn.UseVisualStyleBackColor = false;
+            this.doctorManage_btn.Click += new System.EventHandler(this.doctorManage_btn_Click);
             // 
             // dasboard_btn
             // 
@@ -163,12 +170,34 @@
             this.dasboard_btn.TabIndex = 0;
             this.dasboard_btn.Text = "Dashboard";
             this.dasboard_btn.UseVisualStyleBackColor = false;
+            this.dasboard_btn.Click += new System.EventHandler(this.dasboard_btn_Click);
+            // 
+            // dashhboradControl1
+            // 
+            this.dashhboradControl1.Location = new System.Drawing.Point(257, 77);
+            this.dashhboradControl1.Name = "dashhboradControl1";
+            this.dashhboradControl1.Size = new System.Drawing.Size(1190, 716);
+            this.dashhboradControl1.TabIndex = 6;
+            // 
+            // doctorManagementControl1
+            // 
+            this.doctorManagementControl1.Location = new System.Drawing.Point(257, 77);
+            this.doctorManagementControl1.Name = "doctorManagementControl1";
+            this.doctorManagementControl1.Size = new System.Drawing.Size(1190, 716);
+            this.doctorManagementControl1.TabIndex = 5;
+            // 
+            // patientManagementControl1
+            // 
+            this.patientManagementControl1.Location = new System.Drawing.Point(257, 77);
+            this.patientManagementControl1.Name = "patientManagementControl1";
+            this.patientManagementControl1.Size = new System.Drawing.Size(1190, 716);
+            this.patientManagementControl1.TabIndex = 4;
             // 
             // patientCheckInOutControl1
             // 
             this.patientCheckInOutControl1.Location = new System.Drawing.Point(257, 77);
             this.patientCheckInOutControl1.Name = "patientCheckInOutControl1";
-            this.patientCheckInOutControl1.Size = new System.Drawing.Size(1181, 716);
+            this.patientCheckInOutControl1.Size = new System.Drawing.Size(1190, 716);
             this.patientCheckInOutControl1.TabIndex = 3;
             // 
             // MainDashboard
@@ -176,6 +205,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1450, 800);
+            this.Controls.Add(this.dashhboradControl1);
+            this.Controls.Add(this.doctorManagementControl1);
+            this.Controls.Add(this.patientManagementControl1);
             this.Controls.Add(this.patientCheckInOutControl1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -203,5 +235,8 @@
         private System.Windows.Forms.Button patientManage_btn;
         private System.Windows.Forms.Button doctorManage_btn;
         private Control.PatientCheckInOutControl patientCheckInOutControl1;
+        private Control.PatientManagementControl patientManagementControl1;
+        private Control.DoctorManagementControl doctorManagementControl1;
+        private Control.DashhboradControl dashhboradControl1;
     }
 }

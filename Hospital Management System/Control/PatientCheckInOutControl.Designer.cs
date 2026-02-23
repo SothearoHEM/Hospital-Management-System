@@ -33,6 +33,7 @@
             this.checkOut_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.checkOutControl1 = new Hospital_Management_System.Control.CheckOutControl();
             this.checkInControl1 = new Hospital_Management_System.Control.CheckInControl();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -59,6 +60,7 @@
             this.checkIn_btn.TabIndex = 26;
             this.checkIn_btn.Text = "Check In";
             this.checkIn_btn.UseVisualStyleBackColor = false;
+            this.checkIn_btn.Click += new System.EventHandler(this.checkIn_btn_Click);
             // 
             // checkOut_btn
             // 
@@ -71,6 +73,7 @@
             this.checkOut_btn.TabIndex = 25;
             this.checkOut_btn.Text = "Check Out";
             this.checkOut_btn.UseVisualStyleBackColor = false;
+            this.checkOut_btn.Click += new System.EventHandler(this.checkOut_btn_Click);
             // 
             // label1
             // 
@@ -85,17 +88,25 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.checkInControl1);
+            this.panel2.Controls.Add(this.checkOutControl1);
             this.panel2.Location = new System.Drawing.Point(9, 61);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1169, 644);
             this.panel2.TabIndex = 1;
             // 
+            // checkOutControl1
+            // 
+            this.checkOutControl1.Location = new System.Drawing.Point(4, 4);
+            this.checkOutControl1.Name = "checkOutControl1";
+            this.checkOutControl1.Size = new System.Drawing.Size(1165, 640);
+            this.checkOutControl1.TabIndex = 0;
+            // 
             // checkInControl1
             // 
-            this.checkInControl1.Location = new System.Drawing.Point(4, 5);
+            this.checkInControl1.Location = new System.Drawing.Point(4, 4);
             this.checkInControl1.Name = "checkInControl1";
             this.checkInControl1.Size = new System.Drawing.Size(1165, 640);
-            this.checkInControl1.TabIndex = 0;
+            this.checkInControl1.TabIndex = 1;
             // 
             // PatientCheckInOutControl
             // 
@@ -120,5 +131,6 @@
         private System.Windows.Forms.Button checkIn_btn;
         private System.Windows.Forms.Button checkOut_btn;
         private CheckInControl checkInControl1;
+        private CheckOutControl checkOutControl1;
     }
 }
