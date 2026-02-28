@@ -1,5 +1,7 @@
-﻿using System;
+﻿using HospitalManagementSystem;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -8,12 +10,23 @@ namespace Hospital_Management_System
 {
     internal static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
+            // Test connection
+            //try
+            //{
+            //    using (SqlConnection conn = DatabaseConnection.GetConnection())
+            //    {
+            //        conn.Open();
+            //        MessageBox.Show("Database connected successfully!");
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Database connection failed: " + ex.Message);
+            //    return;
+            //}
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             

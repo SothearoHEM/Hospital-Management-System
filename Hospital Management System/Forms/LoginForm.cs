@@ -1,7 +1,9 @@
-﻿using System;
+﻿using HospitalManagementSystem;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -24,29 +26,49 @@ namespace Hospital_Management_System.Forms
 
         private void showPassword_CheckedChanged(object sender, EventArgs e)
         {
-            textPassword.PasswordChar = showPassword.Checked ? '\0' : '*';
-        }
-
-        private bool emptyFields()
-        {
-            if (string.IsNullOrWhiteSpace(textUsername.Text) || string.IsNullOrWhiteSpace(textPassword.Text))
-            {
-                MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return true;
-            }
-            return false;
+            textPassword.UseSystemPasswordChar = !showPassword.Checked;
         }
 
         private void login_btn_Click(object sender, EventArgs e)
         {
-            if (emptyFields())
+            string username = textUsername.Text.Trim();
+            string password = textPassword.Text.Trim();
+
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
+                MessageBox.Show("Please enter username and password");
                 return;
-            } 
-            
-            MainDashboard dashboard = new MainDashboard();
-            dashboard.Show();
-            this.Hide();
+            }
+
+            try
+            {
+                using (SqlConnection conn = DatabaseConnection.GetConnection())
+                {
+                    string query = "SELECT COUNT(*) FROM Users WHERE Username=@Username AND Password=@Password";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@Username", username);
+                    cmd.Parameters.AddWithValue("@Password", password);
+
+                    conn.Open();
+                    int count = (int)cmd.ExecuteScalar();
+
+                    if (count > 0)
+                    {
+                        MessageBox.Show("Login Successful!");
+                        this.Hide();
+                        MainDashboard mainDashboard = new MainDashboard();
+                        mainDashboard.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid username or password");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
     }
 }
