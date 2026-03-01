@@ -56,9 +56,12 @@ namespace Hospital_Management_System.Forms
 
         private void logOut_btn_Click(object sender, EventArgs e)
         {
-            LoginForm loginForm = new LoginForm();
-            loginForm.Show();
-            this.Hide();
+            if (MessageBox.Show("You want to log out?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                LoginForm loginForm = new LoginForm();
+                loginForm.Show();
+                this.Hide();
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital_Management_System.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,18 @@ namespace Hospital_Management_System.Control
         public DoctorManagementControl()
         {
             InitializeComponent();
+            displayDoctors();
+        }
+
+        private void doctorGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        public void displayDoctors()
+        {
+            DoctorData doctorData = new DoctorData();
+            List<DoctorData> doctors = doctorData.GetAllDoctors();
+            doctorGridView.DataSource = doctors;
         }
     }
 }

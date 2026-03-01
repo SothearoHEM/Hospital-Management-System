@@ -83,6 +83,7 @@
             // 
             // doctorGridView
             // 
+            this.doctorGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.doctorGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.doctorGridView.Location = new System.Drawing.Point(0, 46);
             this.doctorGridView.Name = "doctorGridView";
@@ -90,6 +91,7 @@
             this.doctorGridView.RowTemplate.Height = 24;
             this.doctorGridView.Size = new System.Drawing.Size(1169, 296);
             this.doctorGridView.TabIndex = 0;
+            this.doctorGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.doctorGridView_CellContentClick);
             // 
             // panel2
             // 

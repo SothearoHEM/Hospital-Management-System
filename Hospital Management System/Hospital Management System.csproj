@@ -63,6 +63,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\DoctorData.cs" />
+    <Compile Include="Classes\PatientData.cs" />
+    <Compile Include="Classes\UserData.cs" />
+    <Compile Include="Classes\VisitData.cs" />
     <Compile Include="Control\CheckInControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

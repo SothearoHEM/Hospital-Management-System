@@ -15,11 +15,18 @@ namespace Hospital_Management_System.Control
         public PatientManagementControl()
         {
             InitializeComponent();
+            displayPatientsData();
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        public void displayPatientsData()
+        {
+            Classes.PatientData patientData = new Classes.PatientData();
+            List<Classes.PatientData> patients = patientData.GetAllPatients();
+            patientGridView.DataSource = patients;
         }
     }
 }

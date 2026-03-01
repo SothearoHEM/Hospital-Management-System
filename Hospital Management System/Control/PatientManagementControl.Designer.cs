@@ -85,6 +85,7 @@
             // 
             // patientGridView
             // 
+            this.patientGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.patientGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.patientGridView.Location = new System.Drawing.Point(8, 46);
             this.patientGridView.Name = "patientGridView";
