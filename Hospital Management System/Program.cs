@@ -1,5 +1,5 @@
-﻿using HospitalManagementSystem;
-using System;
+﻿using System;
+using Hospital_Management_System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -13,20 +13,21 @@ namespace Hospital_Management_System
         [STAThread]
         static void Main()
         {
-            // Test connection
-            //try
-            //{
-            //    using (SqlConnection conn = DatabaseConnection.GetConnection())
-            //    {
-            //        conn.Open();
-            //        MessageBox.Show("Database connected successfully!");
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Database connection failed: " + ex.Message);
-            //    return;
-            //}
+            //Test connection
+            try
+            {
+                using (SqlConnection conn = DatabaseConnection.GetConnection())
+                {
+                    conn.Open();
+                    MessageBox.Show("Database connected successfully!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database connection failed: " + ex.Message);
+                return;
+            }
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             

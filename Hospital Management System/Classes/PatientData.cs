@@ -1,10 +1,7 @@
-﻿using HospitalManagementSystem;
-using System;
+﻿using System;
+using Hospital_Management_System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Hospital_Management_System.Classes
 {
@@ -12,41 +9,27 @@ namespace Hospital_Management_System.Classes
     {
         // Basic Fields
         public string PatientID { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public DateTime DateOfBirth { get; set; }
+        public string FullName { get; set; }
+        public DateTime DOB { get; set; }
         public string Gender { get; set; }
-        public string PhoneNumber { get; set; }
-        public string BloodType { get; set; }
-        public string EmailAddress { get; set; }
+        public string Phone { get; set; }
         public string Address { get; set; }
-        public string KnownAllergies { get; set; }
-        public string MedicalHistoryNotes { get; set; }
+        public string BloodType { get; set; }
+        public string Allergies { get; set; }
+        public string Diagnosis { get; set; }
 
         // Audit Fields
-        public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
-
-        // Computed Properties
-        public string FullName => $"{FirstName} {LastName}";
-        public int Age
-        {
-            get
-            {
-                var today = DateTime.Today;
-                var age = today.Year - DateOfBirth.Year;
-                if (DateOfBirth.Date > today.AddYears(-age)) age--;
-                return age;
-            }
-        }
-        public bool IsModified => UpdatedAt > CreatedAt;
+        public DateTime Created_At { get; set; }
+        public DateTime Updated_At { get; set; }
+        public bool Is_Deleted { get; set; }
 
         // Constructor
         public PatientData()
         {
-            DateOfBirth = DateTime.Now.AddYears(-30);
-            CreatedAt = DateTime.Now;
-            UpdatedAt = DateTime.Now;
+            DOB = DateTime.Now.AddYears(-30);
+            Created_At = DateTime.Now;
+            Updated_At = DateTime.Now;
+            Is_Deleted = false; ;
         }
         public List<PatientData> GetAllPatients()
         {
@@ -56,9 +39,10 @@ namespace Hospital_Management_System.Classes
             {
                 using (SqlConnection conn = DatabaseConnection.GetConnection())
                 {
-                    string query = @"SELECT * FROM Patients 
-                                   WHERE IsDeleted = 0 
-                                   ORDER BY FirstName, LastName";
+                    string query = @"SELECT PatientID, FullName, DOB, Gender, Phone, Address, BloodType, Allergies, Diagnosis, Created_At, Updated_At, Is_Deleted
+                                   FROM Patients
+                                   WHERE Is_Deleted = 0
+                                   ORDER BY FullName";
 
                     SqlCommand cmd = new SqlCommand(query, conn);
 
@@ -73,7 +57,7 @@ namespace Hospital_Management_System.Classes
             }
             catch (Exception ex)
             {
-                throw new Exception("Error loading patients: " + ex.Message);
+                throw new Exception("Error loading patients: " + ex.ToString(), ex);
             }
 
             return patients;
@@ -82,20 +66,19 @@ namespace Hospital_Management_System.Classes
         {
             return new PatientData
             {
-                PatientID = reader["PatientID"].ToString(),
-                FirstName = reader["FirstName"].ToString(),
-                LastName = reader["LastName"].ToString(),
-                DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]),
-                Gender = reader["Gender"].ToString(),
-                PhoneNumber = reader["PhoneNumber"].ToString(),
-                BloodType = reader["BloodType"].ToString(),
-                EmailAddress = reader["EmailAddress"].ToString(),
-                Address = reader["Address"].ToString(),
-                KnownAllergies = reader["KnownAllergies"].ToString(),
-                MedicalHistoryNotes = reader["MedicalHistoryNotes"].ToString(),
-                CreatedAt = Convert.ToDateTime(reader["CreatedAt"]),
-                UpdatedAt = Convert.ToDateTime(reader["UpdatedAt"])
+                PatientID = reader["PatientID"]?.ToString(),
+                FullName = reader["FullName"]?.ToString(),
+                DOB = reader["DOB"] != DBNull.Value ? Convert.ToDateTime(reader["DOB"]) : DateTime.MinValue,
+                Gender = reader["Gender"]?.ToString(),
+                Phone = reader["Phone"]?.ToString(),
+                Address = reader["Address"]?.ToString(),
+                BloodType = reader["BloodType"]?.ToString(),
+                Allergies = reader["Allergies"]?.ToString(),
+                Diagnosis = reader["Diagnosis"]?.ToString(),
+                Created_At = reader["Created_At"] != DBNull.Value ? Convert.ToDateTime(reader["Created_At"]) : DateTime.MinValue,
+                Updated_At = reader["Updated_At"] != DBNull.Value ? Convert.ToDateTime(reader["Updated_At"]) : DateTime.MinValue,
+                Is_Deleted = reader["Is_Deleted"] != DBNull.Value ? Convert.ToBoolean(reader["Is_Deleted"]) : false,
             };
         }
     }
-    }
+}

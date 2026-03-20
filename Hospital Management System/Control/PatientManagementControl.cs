@@ -15,7 +15,16 @@ namespace Hospital_Management_System.Control
         public PatientManagementControl()
         {
             InitializeComponent();
-            displayPatientsData();
+            this.Load += PatientManagementControl_Load;
+        }
+
+        private void PatientManagementControl_Load(object sender, EventArgs e)
+        {
+            // Only load data at runtime, not in design mode
+            if (!this.DesignMode && LicenseManager.UsageMode != LicenseUsageMode.Designtime)
+            {
+                displayPatientsData();
+            }
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)

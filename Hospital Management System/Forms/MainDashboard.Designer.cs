@@ -33,14 +33,13 @@
             this.dashboard_close_btn = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.logOut_btn = new System.Windows.Forms.Button();
-            this.report_btn = new System.Windows.Forms.Button();
             this.checkInOutManage_btn = new System.Windows.Forms.Button();
             this.patientManage_btn = new System.Windows.Forms.Button();
             this.doctorManage_btn = new System.Windows.Forms.Button();
             this.dasboard_btn = new System.Windows.Forms.Button();
             this.dashhboradControl1 = new Hospital_Management_System.Control.DashhboradControl();
-            this.doctorManagementControl1 = new Hospital_Management_System.Control.DoctorManagementControl();
             this.patientManagementControl1 = new Hospital_Management_System.Control.PatientManagementControl();
+            this.doctorManagementControl1 = new Hospital_Management_System.Control.DoctorManagementControl();
             this.patientCheckInOutControl1 = new Hospital_Management_System.Control.PatientCheckInOutControl();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -84,7 +83,6 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel2.Controls.Add(this.logOut_btn);
-            this.panel2.Controls.Add(this.report_btn);
             this.panel2.Controls.Add(this.checkInOutManage_btn);
             this.panel2.Controls.Add(this.patientManage_btn);
             this.panel2.Controls.Add(this.doctorManage_btn);
@@ -107,18 +105,6 @@
             this.logOut_btn.Text = "LogOut";
             this.logOut_btn.UseVisualStyleBackColor = false;
             this.logOut_btn.Click += new System.EventHandler(this.logOut_btn_Click);
-            // 
-            // report_btn
-            // 
-            this.report_btn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.report_btn.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.report_btn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.report_btn.Location = new System.Drawing.Point(12, 391);
-            this.report_btn.Name = "report_btn";
-            this.report_btn.Size = new System.Drawing.Size(225, 65);
-            this.report_btn.TabIndex = 4;
-            this.report_btn.Text = "Report";
-            this.report_btn.UseVisualStyleBackColor = false;
             // 
             // checkInOutManage_btn
             // 
@@ -173,41 +159,41 @@
             this.dasboard_btn.Click += new System.EventHandler(this.dasboard_btn_Click);
             // 
             // dashhboradControl1
-            // 
+            //
             this.dashhboradControl1.Location = new System.Drawing.Point(257, 77);
             this.dashhboradControl1.Name = "dashhboradControl1";
             this.dashhboradControl1.Size = new System.Drawing.Size(1190, 716);
             this.dashhboradControl1.TabIndex = 6;
-            // 
-            // doctorManagementControl1
-            // 
-            this.doctorManagementControl1.Location = new System.Drawing.Point(257, 77);
-            this.doctorManagementControl1.Name = "doctorManagementControl1";
-            this.doctorManagementControl1.Size = new System.Drawing.Size(1190, 716);
-            this.doctorManagementControl1.TabIndex = 5;
-            // 
+            //
             // patientManagementControl1
-            // 
+            //
             this.patientManagementControl1.Location = new System.Drawing.Point(257, 77);
             this.patientManagementControl1.Name = "patientManagementControl1";
             this.patientManagementControl1.Size = new System.Drawing.Size(1190, 716);
             this.patientManagementControl1.TabIndex = 4;
-            // 
+            //
+            // doctorManagementControl1
+            //
+            this.doctorManagementControl1.Location = new System.Drawing.Point(257, 77);
+            this.doctorManagementControl1.Name = "doctorManagementControl1";
+            this.doctorManagementControl1.Size = new System.Drawing.Size(1190, 716);
+            this.doctorManagementControl1.TabIndex = 5;
+            //
             // patientCheckInOutControl1
-            // 
+            //
             this.patientCheckInOutControl1.Location = new System.Drawing.Point(257, 77);
             this.patientCheckInOutControl1.Name = "patientCheckInOutControl1";
             this.patientCheckInOutControl1.Size = new System.Drawing.Size(1190, 716);
             this.patientCheckInOutControl1.TabIndex = 3;
-            // 
+            //
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1450, 800);
             this.Controls.Add(this.dashhboradControl1);
-            this.Controls.Add(this.doctorManagementControl1);
             this.Controls.Add(this.patientManagementControl1);
+            this.Controls.Add(this.doctorManagementControl1);
             this.Controls.Add(this.patientCheckInOutControl1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -230,7 +216,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button dasboard_btn;
         private System.Windows.Forms.Button logOut_btn;
-        private System.Windows.Forms.Button report_btn;
         private System.Windows.Forms.Button checkInOutManage_btn;
         private System.Windows.Forms.Button patientManage_btn;
         private System.Windows.Forms.Button doctorManage_btn;

@@ -1,5 +1,5 @@
-﻿using HospitalManagementSystem;
-using System;
+﻿using System;
+using Hospital_Management_System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -12,31 +12,21 @@ namespace Hospital_Management_System.Classes
     {
         // Basic Fields
         public string DoctorID { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string FullName { get; set; }
         public string Gender { get; set; }
         public string Specialization { get; set; }
-        public string PhoneNumber { get; set; }
-        public string EmailAddress { get; set; }
-        public string LicenseNumber { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
         public string Status { get; set; }
-        public string ImagePath { get; set; }
 
         // Audit Fields
-        public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
-
-        // Computed Properties
-        public string FullName => $"Dr. {FirstName} {LastName}";
-        public string DisplayName => $"{FullName} - {Specialization}";
-        public bool IsModified => UpdatedAt > CreatedAt;
+        public DateTime Updated_At { get; set; }
 
         // Constructor
         public DoctorData()
         {
             Status = "Active";
-            CreatedAt = DateTime.Now;
-            UpdatedAt = DateTime.Now;
+            Updated_At = DateTime.Now;
         }
         public List<DoctorData> GetAllDoctors()
         {
@@ -46,9 +36,9 @@ namespace Hospital_Management_System.Classes
             {
                 using (SqlConnection conn = DatabaseConnection.GetConnection())
                 {
-                    string query = @"SELECT * FROM Doctors 
-                                   WHERE IsDeleted = 0 
-                                   ORDER BY FirstName, LastName";
+                    string query = @"SELECT DoctorID, FullName, Gender, Specialization, Phone, Email, Status, Updated_At
+                                   FROM Doctors
+                                   ORDER BY FullName";
 
                     SqlCommand cmd = new SqlCommand(query, conn);
 
@@ -63,7 +53,7 @@ namespace Hospital_Management_System.Classes
             }
             catch (Exception ex)
             {
-                throw new Exception("Error loading doctors: " + ex.Message);
+                throw new Exception("Error loading doctors: " + ex.ToString(), ex);
             }
 
             return doctors;
@@ -74,17 +64,13 @@ namespace Hospital_Management_System.Classes
             return new DoctorData
             {
                 DoctorID = reader["DoctorID"]?.ToString(),
-                FirstName = reader["FirstName"]?.ToString(),
-                LastName = reader["LastName"]?.ToString(),
+                FullName = reader["FullName"]?.ToString(),
                 Gender = reader["Gender"]?.ToString(),
                 Specialization = reader["Specialization"]?.ToString(),
-                PhoneNumber = reader["PhoneNumber"]?.ToString(),
-                EmailAddress = reader["EmailAddress"]?.ToString(),
-                LicenseNumber = reader["LicenseNumber"]?.ToString(),
+                Phone = reader["Phone"]?.ToString(),
+                Email = reader["Email"]?.ToString(),
                 Status = reader["Status"]?.ToString(),
-                ImagePath = reader["ImagePath"]?.ToString(),
-                CreatedAt = reader["CreatedAt"] != DBNull.Value ? Convert.ToDateTime(reader["CreatedAt"]) : DateTime.MinValue,
-                UpdatedAt = reader["UpdatedAt"] != DBNull.Value ? Convert.ToDateTime(reader["UpdatedAt"]) : DateTime.MinValue,
+                Updated_At = reader["Updated_At"] != DBNull.Value ? Convert.ToDateTime(reader["Updated_At"]) : DateTime.MinValue
             };
         }
     }

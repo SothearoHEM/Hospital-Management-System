@@ -16,7 +16,16 @@ namespace Hospital_Management_System.Control
         public DoctorManagementControl()
         {
             InitializeComponent();
-            displayDoctors();
+            this.Load += DoctorManagementControl_Load;
+        }
+
+        private void DoctorManagementControl_Load(object sender, EventArgs e)
+        {
+            // Only load data at runtime, not in design mode
+            if (!this.DesignMode && LicenseManager.UsageMode != LicenseUsageMode.Designtime)
+            {
+                displayDoctors();
+            }
         }
 
         private void doctorGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
