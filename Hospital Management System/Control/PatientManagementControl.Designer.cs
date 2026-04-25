@@ -1,13 +1,13 @@
-﻿namespace Hospital_Management_System.Control
+namespace Hospital_Management_System.Control
 {
     partial class PatientManagementControl
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -22,8 +22,8 @@
 
         #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
@@ -32,6 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.patientGridView = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.PrintPatientsReport_btn = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.textPatientDiagnosis = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.textPatientAllergies = new System.Windows.Forms.TextBox();
@@ -53,8 +55,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textPatientID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.PrintPatientsReport_btn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientGridView)).BeginInit();
             this.panel2.SuspendLayout();
@@ -90,6 +90,7 @@
             this.patientGridView.RowTemplate.Height = 24;
             this.patientGridView.Size = new System.Drawing.Size(1168, 296);
             this.patientGridView.TabIndex = 0;
+            this.patientGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.patientGridView_CellClick);
             // 
             // panel2
             // 
@@ -121,6 +122,28 @@
             this.panel2.Size = new System.Drawing.Size(1168, 362);
             this.panel2.TabIndex = 2;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // PrintPatientsReport_btn
+            // 
+            this.PrintPatientsReport_btn.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.PrintPatientsReport_btn.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrintPatientsReport_btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.PrintPatientsReport_btn.Location = new System.Drawing.Point(894, 300);
+            this.PrintPatientsReport_btn.Name = "PrintPatientsReport_btn";
+            this.PrintPatientsReport_btn.Size = new System.Drawing.Size(250, 40);
+            this.PrintPatientsReport_btn.TabIndex = 35;
+            this.PrintPatientsReport_btn.Text = "Print Patients Report";
+            this.PrintPatientsReport_btn.UseVisualStyleBackColor = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(314, 86);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(121, 27);
+            this.label4.TabIndex = 34;
+            this.label4.Text = "Blood Type";
             // 
             // textPatientDiagnosis
             // 
@@ -156,6 +179,29 @@
             // 
             this.comboPatientBloodType.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboPatientBloodType.FormattingEnabled = true;
+            this.comboPatientBloodType.Items.AddRange(new object[] {
+            "A+",
+            "",
+            "",
+            "A-",
+            "",
+            "",
+            "B+",
+            "",
+            "",
+            "B-",
+            "",
+            "",
+            "AB+",
+            "",
+            "",
+            "AB-",
+            "",
+            "",
+            "O+",
+            "",
+            "",
+            "O-"});
             this.comboPatientBloodType.Location = new System.Drawing.Point(311, 116);
             this.comboPatientBloodType.Name = "comboPatientBloodType";
             this.comboPatientBloodType.Size = new System.Drawing.Size(250, 35);
@@ -173,6 +219,9 @@
             // 
             this.comboPatientGender.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboPatientGender.FormattingEnabled = true;
+            this.comboPatientGender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
             this.comboPatientGender.Location = new System.Drawing.Point(894, 43);
             this.comboPatientGender.Name = "comboPatientGender";
             this.comboPatientGender.Size = new System.Drawing.Size(250, 35);
@@ -189,6 +238,7 @@
             this.clearPatient_btn.TabIndex = 24;
             this.clearPatient_btn.Text = "Clear";
             this.clearPatient_btn.UseVisualStyleBackColor = false;
+            this.clearPatient_btn.Click += new System.EventHandler(this.clearPatient_btn_Click);
             // 
             // deletePatient_btn
             // 
@@ -201,6 +251,7 @@
             this.deletePatient_btn.TabIndex = 23;
             this.deletePatient_btn.Text = "Delete";
             this.deletePatient_btn.UseVisualStyleBackColor = false;
+            this.deletePatient_btn.Click += new System.EventHandler(this.deletePatient_btn_Click);
             // 
             // updatePatient_btn
             // 
@@ -213,6 +264,7 @@
             this.updatePatient_btn.TabIndex = 22;
             this.updatePatient_btn.Text = "Update";
             this.updatePatient_btn.UseVisualStyleBackColor = false;
+            this.updatePatient_btn.Click += new System.EventHandler(this.updatePatient_btn_Click);
             // 
             // addPatient_btn
             // 
@@ -225,6 +277,7 @@
             this.addPatient_btn.TabIndex = 21;
             this.addPatient_btn.Text = "Add Patient";
             this.addPatient_btn.UseVisualStyleBackColor = false;
+            this.addPatient_btn.Click += new System.EventHandler(this.addPatient_btn_Click);
             // 
             // textPatientPhoneNumber
             // 
@@ -332,28 +385,6 @@
             this.label2.Size = new System.Drawing.Size(119, 27);
             this.label2.TabIndex = 0;
             this.label2.Text = "Patient ID *";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(314, 86);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 27);
-            this.label4.TabIndex = 34;
-            this.label4.Text = "Blood Type";
-            // 
-            // PrintPatientsReport_btn
-            // 
-            this.PrintPatientsReport_btn.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.PrintPatientsReport_btn.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PrintPatientsReport_btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.PrintPatientsReport_btn.Location = new System.Drawing.Point(894, 300);
-            this.PrintPatientsReport_btn.Name = "PrintPatientsReport_btn";
-            this.PrintPatientsReport_btn.Size = new System.Drawing.Size(250, 40);
-            this.PrintPatientsReport_btn.TabIndex = 35;
-            this.PrintPatientsReport_btn.Text = "Print Patients Report";
-            this.PrintPatientsReport_btn.UseVisualStyleBackColor = false;
             // 
             // PatientManagementControl
             // 

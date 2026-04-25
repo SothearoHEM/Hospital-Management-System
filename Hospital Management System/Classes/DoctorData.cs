@@ -17,10 +17,13 @@ namespace Hospital_Management_System.Classes
         public string Specialization { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
+        public string LicenseNo { get; set; }
         public string Status { get; set; }
+        public string Img_Path { get; set; }
 
         // Audit Fields
         public DateTime Updated_At { get; set; }
+        
 
         // Constructor
         public DoctorData()
@@ -36,9 +39,9 @@ namespace Hospital_Management_System.Classes
             {
                 using (SqlConnection conn = DatabaseConnection.GetConnection())
                 {
-                    string query = @"SELECT DoctorID, FullName, Gender, Specialization, Phone, Email, Status, Updated_At
+                    string query = @"SELECT DoctorID, FullName, Gender, Specialization, Phone, Email, LicenseNo, Status,Img_Path, Updated_At
                                    FROM Doctors
-                                   ORDER BY FullName";
+                                   WHERE Status = 'Active' AND Is_Deleted = 0 ORDER BY FullName ASC";
 
                     SqlCommand cmd = new SqlCommand(query, conn);
 
@@ -69,7 +72,9 @@ namespace Hospital_Management_System.Classes
                 Specialization = reader["Specialization"]?.ToString(),
                 Phone = reader["Phone"]?.ToString(),
                 Email = reader["Email"]?.ToString(),
+                LicenseNo = reader["LicenseNo"]?.ToString(),
                 Status = reader["Status"]?.ToString(),
+                Img_Path = reader["Img_Path"]?.ToString(),
                 Updated_At = reader["Updated_At"] != DBNull.Value ? Convert.ToDateTime(reader["Updated_At"]) : DateTime.MinValue
             };
         }

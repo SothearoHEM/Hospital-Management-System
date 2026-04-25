@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.doctorGridView = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.doctorsReportPrint_btn = new System.Windows.Forms.Button();
             this.comboDoctorGender = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.doctorImportImg_btn = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@
             this.addDoctor_btn = new System.Windows.Forms.Button();
             this.pictureDoctor = new System.Windows.Forms.PictureBox();
             this.comboDoctorStatus = new System.Windows.Forms.ComboBox();
-            this.comboDoctorSpecialization = new System.Windows.Forms.ComboBox();
             this.textDoctorEmail = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textDoctorID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.doctorsReportPrint_btn = new System.Windows.Forms.Button();
+            this.textDoctorSpecialization = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.doctorGridView)).BeginInit();
             this.panel2.SuspendLayout();
@@ -90,10 +90,12 @@
             this.doctorGridView.RowTemplate.Height = 24;
             this.doctorGridView.Size = new System.Drawing.Size(1169, 312);
             this.doctorGridView.TabIndex = 0;
+            this.doctorGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.doctorGridView_CellClick);
             this.doctorGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.doctorGridView_CellContentClick);
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.textDoctorSpecialization);
             this.panel2.Controls.Add(this.doctorsReportPrint_btn);
             this.panel2.Controls.Add(this.comboDoctorGender);
             this.panel2.Controls.Add(this.label10);
@@ -104,7 +106,6 @@
             this.panel2.Controls.Add(this.addDoctor_btn);
             this.panel2.Controls.Add(this.pictureDoctor);
             this.panel2.Controls.Add(this.comboDoctorStatus);
-            this.panel2.Controls.Add(this.comboDoctorSpecialization);
             this.panel2.Controls.Add(this.textDoctorEmail);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
@@ -122,10 +123,25 @@
             this.panel2.Size = new System.Drawing.Size(1168, 334);
             this.panel2.TabIndex = 1;
             // 
+            // doctorsReportPrint_btn
+            // 
+            this.doctorsReportPrint_btn.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.doctorsReportPrint_btn.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.doctorsReportPrint_btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.doctorsReportPrint_btn.Location = new System.Drawing.Point(656, 276);
+            this.doctorsReportPrint_btn.Name = "doctorsReportPrint_btn";
+            this.doctorsReportPrint_btn.Size = new System.Drawing.Size(236, 40);
+            this.doctorsReportPrint_btn.TabIndex = 28;
+            this.doctorsReportPrint_btn.Text = "Print Doctors Report";
+            this.doctorsReportPrint_btn.UseVisualStyleBackColor = false;
+            // 
             // comboDoctorGender
             // 
             this.comboDoctorGender.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboDoctorGender.FormattingEnabled = true;
+            this.comboDoctorGender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
             this.comboDoctorGender.Location = new System.Drawing.Point(655, 50);
             this.comboDoctorGender.Name = "comboDoctorGender";
             this.comboDoctorGender.Size = new System.Drawing.Size(237, 35);
@@ -152,6 +168,7 @@
             this.doctorImportImg_btn.TabIndex = 25;
             this.doctorImportImg_btn.Text = "Import";
             this.doctorImportImg_btn.UseVisualStyleBackColor = false;
+            this.doctorImportImg_btn.Click += new System.EventHandler(this.doctorImportImg_btn_Click);
             // 
             // clearDoctor_btn
             // 
@@ -164,6 +181,7 @@
             this.clearDoctor_btn.TabIndex = 24;
             this.clearDoctor_btn.Text = "Clear";
             this.clearDoctor_btn.UseVisualStyleBackColor = false;
+            this.clearDoctor_btn.Click += new System.EventHandler(this.clearDoctor_btn_Click);
             // 
             // deleteDoctor_btn
             // 
@@ -176,6 +194,7 @@
             this.deleteDoctor_btn.TabIndex = 23;
             this.deleteDoctor_btn.Text = "Delete";
             this.deleteDoctor_btn.UseVisualStyleBackColor = false;
+            this.deleteDoctor_btn.Click += new System.EventHandler(this.deleteDoctor_btn_Click);
             // 
             // updateDoctor_btn
             // 
@@ -188,6 +207,7 @@
             this.updateDoctor_btn.TabIndex = 22;
             this.updateDoctor_btn.Text = "Update";
             this.updateDoctor_btn.UseVisualStyleBackColor = false;
+            this.updateDoctor_btn.Click += new System.EventHandler(this.updateDoctor_btn_Click);
             // 
             // addDoctor_btn
             // 
@@ -200,6 +220,7 @@
             this.addDoctor_btn.TabIndex = 21;
             this.addDoctor_btn.Text = "Add Doctor";
             this.addDoctor_btn.UseVisualStyleBackColor = false;
+            this.addDoctor_btn.Click += new System.EventHandler(this.addDoctor_btn_Click);
             // 
             // pictureDoctor
             // 
@@ -207,6 +228,7 @@
             this.pictureDoctor.Location = new System.Drawing.Point(925, 20);
             this.pictureDoctor.Name = "pictureDoctor";
             this.pictureDoctor.Size = new System.Drawing.Size(228, 296);
+            this.pictureDoctor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureDoctor.TabIndex = 20;
             this.pictureDoctor.TabStop = false;
             // 
@@ -214,19 +236,12 @@
             // 
             this.comboDoctorStatus.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboDoctorStatus.FormattingEnabled = true;
+            this.comboDoctorStatus.Items.AddRange(new object[] {
+            "Active"});
             this.comboDoctorStatus.Location = new System.Drawing.Point(24, 218);
             this.comboDoctorStatus.Name = "comboDoctorStatus";
             this.comboDoctorStatus.Size = new System.Drawing.Size(285, 35);
             this.comboDoctorStatus.TabIndex = 19;
-            // 
-            // comboDoctorSpecialization
-            // 
-            this.comboDoctorSpecialization.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboDoctorSpecialization.FormattingEnabled = true;
-            this.comboDoctorSpecialization.Location = new System.Drawing.Point(339, 218);
-            this.comboDoctorSpecialization.Name = "comboDoctorSpecialization";
-            this.comboDoctorSpecialization.Size = new System.Drawing.Size(285, 35);
-            this.comboDoctorSpecialization.TabIndex = 18;
             // 
             // textDoctorEmail
             // 
@@ -343,17 +358,14 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Doctor ID *";
             // 
-            // doctorsReportPrint_btn
+            // textDoctorSpecialization
             // 
-            this.doctorsReportPrint_btn.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.doctorsReportPrint_btn.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.doctorsReportPrint_btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.doctorsReportPrint_btn.Location = new System.Drawing.Point(656, 276);
-            this.doctorsReportPrint_btn.Name = "doctorsReportPrint_btn";
-            this.doctorsReportPrint_btn.Size = new System.Drawing.Size(236, 40);
-            this.doctorsReportPrint_btn.TabIndex = 28;
-            this.doctorsReportPrint_btn.Text = "Print Doctors Report";
-            this.doctorsReportPrint_btn.UseVisualStyleBackColor = false;
+            this.textDoctorSpecialization.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textDoctorSpecialization.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDoctorSpecialization.Location = new System.Drawing.Point(339, 220);
+            this.textDoctorSpecialization.Name = "textDoctorSpecialization";
+            this.textDoctorSpecialization.Size = new System.Drawing.Size(285, 33);
+            this.textDoctorSpecialization.TabIndex = 29;
             // 
             // DoctorManagementControl
             // 
@@ -394,7 +406,6 @@
         private System.Windows.Forms.Button addDoctor_btn;
         private System.Windows.Forms.PictureBox pictureDoctor;
         private System.Windows.Forms.ComboBox comboDoctorStatus;
-        private System.Windows.Forms.ComboBox comboDoctorSpecialization;
         private System.Windows.Forms.Button doctorImportImg_btn;
         private System.Windows.Forms.Button clearDoctor_btn;
         private System.Windows.Forms.Button deleteDoctor_btn;
@@ -402,5 +413,6 @@
         private System.Windows.Forms.ComboBox comboDoctorGender;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button doctorsReportPrint_btn;
+        private System.Windows.Forms.TextBox textDoctorSpecialization;
     }
 }
