@@ -225,7 +225,7 @@ namespace Hospital_Management_System.Control
                     }
 
                     cn.Open();
-                    String sqlUpdateCmd = "UPDATE Doctors SET FullName = @FullName, Gender = @Gender, Specialization = @Specialization, Phone = @Phone, Email = @Email, Status = @Status, LicenseNo = @LicenseNo, Img_Path = @Img_Path " +
+                    String sqlUpdateCmd = "UPDATE Doctors SET FullName = @FullName, Gender = @Gender, Specialization = @Specialization, Phone = @Phone, Email = @Email, Status = @Status, LicenseNo = @LicenseNo, Img_Path = @Img_Path , Updated_At = @Updated_At " +
                                           "WHERE DoctorID = @DoctorID";
                     cmd = new SqlCommand(sqlUpdateCmd, cn);
                     cmd.Parameters.AddWithValue("@DoctorID", textDoctorID.Text);
@@ -236,6 +236,7 @@ namespace Hospital_Management_System.Control
                     cmd.Parameters.AddWithValue("@Email", textDoctorEmail.Text);
                     cmd.Parameters.AddWithValue("@Status", comboDoctorStatus.SelectedItem.ToString());
                     cmd.Parameters.AddWithValue("@LicenseNo", textDoctorLicenseNumber.Text);
+                    cmd.Parameters.AddWithValue("@Updated_At", DateTime.Now);
 
                     // Use the relative path if an image exists, otherwise DBNull
                     if (relativePath != null)

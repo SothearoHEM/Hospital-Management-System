@@ -83,8 +83,8 @@ namespace Hospital_Management_System.Control
                 }
 
                 cn.Open();
-                String sqlInsertCmd = @"INSERT INTO Patients (PatientID, FullName, DOB, Gender, Phone, Address, BloodType, Allergies, Diagnosis, Created_At, Updated_At, Is_Deleted)
-                                       VALUES (@PatientID, @FullName, @DOB, @Gender, @Phone, @Address, @BloodType, @Allergies, @Diagnosis, @Created_At, @Updated_At, @Is_Deleted)";
+                String sqlInsertCmd = @"INSERT INTO Patients (PatientID, FullName, DOB, Gender, Phone, Address, BloodType, Allergies, Diagnosis)
+                                       VALUES (@PatientID, @FullName, @DOB, @Gender, @Phone, @Address, @BloodType, @Allergies, @Diagnosis)";
                 cmd = new SqlCommand(sqlInsertCmd, cn);
 
                 cmd.Parameters.AddWithValue("@PatientID", textPatientID.Text);
@@ -96,9 +96,6 @@ namespace Hospital_Management_System.Control
                 cmd.Parameters.AddWithValue("@BloodType", comboPatientBloodType.SelectedItem.ToString());
                 cmd.Parameters.AddWithValue("@Allergies", textPatientAllergies.Text);
                 cmd.Parameters.AddWithValue("@Diagnosis", textPatientDiagnosis.Text);
-                cmd.Parameters.AddWithValue("@Created_At", DateTime.Now);
-                cmd.Parameters.AddWithValue("@Updated_At", DateTime.Now);
-                cmd.Parameters.AddWithValue("@Is_Deleted", 0);
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Patient added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

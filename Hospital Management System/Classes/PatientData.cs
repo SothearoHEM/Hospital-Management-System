@@ -17,19 +17,15 @@ namespace Hospital_Management_System.Classes
         public string BloodType { get; set; }
         public string Allergies { get; set; }
         public string Diagnosis { get; set; }
-
-        // Audit Fields
-        public DateTime Created_At { get; set; }
         public DateTime Updated_At { get; set; }
-        public bool Is_Deleted { get; set; }
+
 
         // Constructor
         public PatientData()
         {
             DOB = DateTime.Now.AddYears(-30);
-            Created_At = DateTime.Now;
             Updated_At = DateTime.Now;
-            Is_Deleted = false; ;
+
         }
         public List<PatientData> GetAllPatients()
         {
@@ -39,7 +35,7 @@ namespace Hospital_Management_System.Classes
             {
                 using (SqlConnection conn = DatabaseConnection.GetConnection())
                 {
-                    string query = @"SELECT PatientID, FullName, DOB, Gender, Phone, Address, BloodType, Allergies, Diagnosis, Created_At, Updated_At, Is_Deleted
+                    string query = @"SELECT PatientID, FullName, DOB, Gender, Phone, Address, BloodType, Allergies, Diagnosis, Updated_At
                                    FROM Patients
                                    WHERE Is_Deleted = 0
                                    ORDER BY FullName";
@@ -75,9 +71,7 @@ namespace Hospital_Management_System.Classes
                 BloodType = reader["BloodType"]?.ToString(),
                 Allergies = reader["Allergies"]?.ToString(),
                 Diagnosis = reader["Diagnosis"]?.ToString(),
-                Created_At = reader["Created_At"] != DBNull.Value ? Convert.ToDateTime(reader["Created_At"]) : DateTime.MinValue,
-                Updated_At = reader["Updated_At"] != DBNull.Value ? Convert.ToDateTime(reader["Updated_At"]) : DateTime.MinValue,
-                Is_Deleted = reader["Is_Deleted"] != DBNull.Value ? Convert.ToBoolean(reader["Is_Deleted"]) : false,
+                Updated_At = reader["Updated_At"] != DBNull.Value ? Convert.ToDateTime(reader["Updated_At"]) : DateTime.MinValue
             };
         }
     }

@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textPatientID_checkOutForm = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.chackInDate_checkOutForm = new System.Windows.Forms.TextBox();
             this.cancel_btn_checkOutForm = new System.Windows.Forms.Button();
             this.FollowUpData = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
@@ -37,6 +40,8 @@
             this.checkOut_btn_checkOutForm = new System.Windows.Forms.Button();
             this.textPrescription = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.textDiagnosis_CheckOut_Form = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.textRoomNumber_checkOutForm = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.chackOutDate_checkOutForm = new System.Windows.Forms.DateTimePicker();
@@ -48,11 +53,6 @@
             this.textVisitID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.chackInDate_checkOutForm = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textDiagnosis_CheckOut_Form = new System.Windows.Forms.TextBox();
-            this.textPatientID_checkOutForm = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,6 +86,36 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1145, 634);
             this.panel2.TabIndex = 3;
+            // 
+            // textPatientID_checkOutForm
+            // 
+            this.textPatientID_checkOutForm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textPatientID_checkOutForm.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPatientID_checkOutForm.Location = new System.Drawing.Point(290, 72);
+            this.textPatientID_checkOutForm.Name = "textPatientID_checkOutForm";
+            this.textPatientID_checkOutForm.ReadOnly = true;
+            this.textPatientID_checkOutForm.Size = new System.Drawing.Size(259, 33);
+            this.textPatientID_checkOutForm.TabIndex = 60;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(285, 42);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(104, 27);
+            this.label7.TabIndex = 59;
+            this.label7.Text = "Patient ID";
+            // 
+            // chackInDate_checkOutForm
+            // 
+            this.chackInDate_checkOutForm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.chackInDate_checkOutForm.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chackInDate_checkOutForm.Location = new System.Drawing.Point(22, 155);
+            this.chackInDate_checkOutForm.Name = "chackInDate_checkOutForm";
+            this.chackInDate_checkOutForm.ReadOnly = true;
+            this.chackInDate_checkOutForm.Size = new System.Drawing.Size(240, 33);
+            this.chackInDate_checkOutForm.TabIndex = 58;
             // 
             // cancel_btn_checkOutForm
             // 
@@ -171,6 +201,27 @@
             this.label12.Size = new System.Drawing.Size(125, 27);
             this.label12.TabIndex = 46;
             this.label12.Text = "Prescription";
+            // 
+            // textDiagnosis_CheckOut_Form
+            // 
+            this.textDiagnosis_CheckOut_Form.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textDiagnosis_CheckOut_Form.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDiagnosis_CheckOut_Form.Location = new System.Drawing.Point(22, 236);
+            this.textDiagnosis_CheckOut_Form.Multiline = true;
+            this.textDiagnosis_CheckOut_Form.Name = "textDiagnosis_CheckOut_Form";
+            this.textDiagnosis_CheckOut_Form.ReadOnly = true;
+            this.textDiagnosis_CheckOut_Form.Size = new System.Drawing.Size(548, 380);
+            this.textDiagnosis_CheckOut_Form.TabIndex = 45;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(17, 205);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(119, 27);
+            this.label11.TabIndex = 44;
+            this.label11.Text = "Diagnosis *\r\n";
             // 
             // textRoomNumber_checkOutForm
             // 
@@ -280,57 +331,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Check Out Form";
             // 
-            // chackInDate_checkOutForm
-            // 
-            this.chackInDate_checkOutForm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.chackInDate_checkOutForm.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chackInDate_checkOutForm.Location = new System.Drawing.Point(22, 155);
-            this.chackInDate_checkOutForm.Name = "chackInDate_checkOutForm";
-            this.chackInDate_checkOutForm.ReadOnly = true;
-            this.chackInDate_checkOutForm.Size = new System.Drawing.Size(240, 33);
-            this.chackInDate_checkOutForm.TabIndex = 58;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(17, 205);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(119, 27);
-            this.label11.TabIndex = 44;
-            this.label11.Text = "Diagnosis *\r\n";
-            // 
-            // textDiagnosis_CheckOut_Form
-            // 
-            this.textDiagnosis_CheckOut_Form.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textDiagnosis_CheckOut_Form.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textDiagnosis_CheckOut_Form.Location = new System.Drawing.Point(22, 236);
-            this.textDiagnosis_CheckOut_Form.Multiline = true;
-            this.textDiagnosis_CheckOut_Form.Name = "textDiagnosis_CheckOut_Form";
-            this.textDiagnosis_CheckOut_Form.ReadOnly = true;
-            this.textDiagnosis_CheckOut_Form.Size = new System.Drawing.Size(548, 380);
-            this.textDiagnosis_CheckOut_Form.TabIndex = 45;
-            // 
-            // textPatientID_checkOutForm
-            // 
-            this.textPatientID_checkOutForm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textPatientID_checkOutForm.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textPatientID_checkOutForm.Location = new System.Drawing.Point(290, 72);
-            this.textPatientID_checkOutForm.Name = "textPatientID_checkOutForm";
-            this.textPatientID_checkOutForm.ReadOnly = true;
-            this.textPatientID_checkOutForm.Size = new System.Drawing.Size(259, 33);
-            this.textPatientID_checkOutForm.TabIndex = 60;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(285, 42);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(104, 27);
-            this.label7.TabIndex = 59;
-            this.label7.Text = "Patient ID";
-            // 
             // CheckOutControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -338,6 +338,7 @@
             this.Controls.Add(this.panel2);
             this.Name = "CheckOutControl";
             this.Size = new System.Drawing.Size(1165, 640);
+            this.Load += new System.EventHandler(this.CheckOutControl_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
