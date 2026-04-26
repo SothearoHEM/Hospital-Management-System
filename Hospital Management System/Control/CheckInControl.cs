@@ -1,4 +1,5 @@
 ﻿using Hospital_Management_System.Classes;
+using Hospital_Management_System.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,16 @@ namespace Hospital_Management_System.Control
         {
             InitializeComponent();
             DisplayCheckInData();
+            this.VisibleChanged += CheckInControl_VisibleChanged;
+        }
+
+        private void CheckInControl_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible)
+            {
+                DisplayCheckInData();
+                LoadActiveDoctors();
+            }
         }
 
         private void CheckInControl_Load_1(object sender, EventArgs e)
@@ -189,30 +200,34 @@ namespace Hospital_Management_System.Control
         {
             try
             {
-                conn.Open();
                 if(checkInGridView.SelectedRows.Count > 0)
                 {
-                    string visitID = checkInGridView.SelectedRows[0].Cells["VisitID"].Value.ToString();
-                    string doctorID = textPatientDoctorCheckIn.SelectedValue.ToString();
-                    string updateQuery = @"UPDATE Visits 
-                                           SET DoctorID = @DoctorID, CheckInTime = @CheckInTime, RoomNo = @RoomNo, Reason = @Reason
-                                           WHERE VisitID = @VisitID";
-                    cmd = new SqlCommand(updateQuery, conn);
-                    cmd.Parameters.AddWithValue("@DoctorID", doctorID);
-                    cmd.Parameters.AddWithValue("@CheckInTime", checkInDate_CheckInForm.Value);
-                    cmd.Parameters.AddWithValue("@RoomNo", textRoomNumber.Text.Trim());
-                    cmd.Parameters.AddWithValue("@Reason", textReasonForVisit.Text.Trim());
-                    cmd.Parameters.AddWithValue("@VisitID", visitID);
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    if (rowsAffected > 0)
+                    DialogResult result = MessageBox.Show("Are you sure you want to update this visit's information?", "Confirm Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
                     {
-                        MessageBox.Show("Visit updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        DisplayCheckInData();
-                        ClearCheckInForm();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Update failed. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        conn.Open();
+                        string visitID = checkInGridView.SelectedRows[0].Cells["VisitID"].Value.ToString();
+                        string doctorID = textPatientDoctorCheckIn.SelectedValue.ToString();
+                        string updateQuery = @"UPDATE Visits 
+                                               SET DoctorID = @DoctorID, CheckInTime = @CheckInTime, RoomNo = @RoomNo, Reason = @Reason
+                                               WHERE VisitID = @VisitID";
+                        cmd = new SqlCommand(updateQuery, conn);
+                        cmd.Parameters.AddWithValue("@DoctorID", doctorID);
+                        cmd.Parameters.AddWithValue("@CheckInTime", checkInDate_CheckInForm.Value);
+                        cmd.Parameters.AddWithValue("@RoomNo", textRoomNumber.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Reason", textReasonForVisit.Text.Trim());
+                        cmd.Parameters.AddWithValue("@VisitID", visitID);
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Visit updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            DisplayCheckInData();
+                            ClearCheckInForm();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Update failed. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
                 else
@@ -284,23 +299,27 @@ namespace Hospital_Management_System.Control
         {
             try
             {
-                conn.Open();
                 if (checkInGridView.SelectedRows.Count > 0)
                 {
-                    string visitID = checkInGridView.SelectedRows[0].Cells["VisitID"].Value.ToString();
-                    string deleteQuery = @"UPDATE Visits SET Is_Deleted = 1, Status = 'Inactive' WHERE VisitID = @VisitID";
-                    cmd = new SqlCommand(deleteQuery, conn);
-                    cmd.Parameters.AddWithValue("@VisitID", visitID);
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    if (rowsAffected > 0)
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete this visit?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.Yes)
                     {
-                        MessageBox.Show("Visit deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        DisplayCheckInData();
-                        ClearCheckInForm();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Delete failed. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        conn.Open();
+                        string visitID = checkInGridView.SelectedRows[0].Cells["VisitID"].Value.ToString();
+                        string deleteQuery = @"UPDATE Visits SET Is_Deleted = 1, Status = 'Inactive' WHERE VisitID = @VisitID";
+                        cmd = new SqlCommand(deleteQuery, conn);
+                        cmd.Parameters.AddWithValue("@VisitID", visitID);
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Visit deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            DisplayCheckInData();
+                            ClearCheckInForm();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Delete failed. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
                 else
@@ -325,13 +344,23 @@ namespace Hospital_Management_System.Control
             {
                 int visitID = Convert.ToInt32(checkInGridView.SelectedRows[0].Cells["VisitID"].Value);
 
-                CheckOutControl checkOutControl = new CheckOutControl();
-                checkOutControl.LoadCheckOutData(visitID);
-                
-                checkOutControl.Visible = true;
+                var patientControl = this.Parent?.Parent as PatientCheckInOutControl;
 
-                CheckInControl checkInControl = this;
-                checkInControl.Visible = false;
+                if (patientControl != null)
+                {
+                    patientControl.checkOutControl1.LoadCheckOutData(visitID);
+                    patientControl.checkOutControl1.Visible = true;
+                    patientControl.checkOutControl1.BringToFront();
+
+                    this.Visible = false;
+                }
+                else
+                {
+                    var mainDashboard = this.FindForm() as MainDashboard;
+
+                }
+
+                ClearCheckInForm();
             }
             else
             {

@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\DoctorData.cs" />
+    <Compile Include="Classes\GlobalEvents.cs" />
     <Compile Include="Classes\PatientData.cs" />
     <Compile Include="Classes\UserData.cs" />
     <Compile Include="Classes\ActiveVisitData.cs" />

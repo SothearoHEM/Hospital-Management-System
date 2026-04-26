@@ -33,8 +33,8 @@
             this.checkOut_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.checkOutControl1 = new Hospital_Management_System.Control.CheckOutControl();
             this.checkInControl1 = new Hospital_Management_System.Control.CheckInControl();
+            this.checkOutControl1 = new Hospital_Management_System.Control.CheckOutControl();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -94,19 +94,19 @@
             this.panel2.Size = new System.Drawing.Size(1169, 644);
             this.panel2.TabIndex = 1;
             // 
+            // checkInControl1
+            // 
+            this.checkInControl1.Location = new System.Drawing.Point(-1, 1);
+            this.checkInControl1.Name = "checkInControl1";
+            this.checkInControl1.Size = new System.Drawing.Size(1170, 640);
+            this.checkInControl1.TabIndex = 1;
+            // 
             // checkOutControl1
             // 
-            this.checkOutControl1.Location = new System.Drawing.Point(4, 4);
+            this.checkOutControl1.Location = new System.Drawing.Point(0, 3);
             this.checkOutControl1.Name = "checkOutControl1";
             this.checkOutControl1.Size = new System.Drawing.Size(1165, 640);
             this.checkOutControl1.TabIndex = 0;
-            // 
-            // checkInControl1
-            // 
-            this.checkInControl1.Location = new System.Drawing.Point(4, 4);
-            this.checkInControl1.Name = "checkInControl1";
-            this.checkInControl1.Size = new System.Drawing.Size(1165, 640);
-            this.checkInControl1.TabIndex = 1;
             // 
             // PatientCheckInOutControl
             // 
@@ -130,7 +130,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button checkIn_btn;
         private System.Windows.Forms.Button checkOut_btn;
-        private CheckInControl checkInControl1;
-        private CheckOutControl checkOutControl1;
+        public CheckOutControl checkOutControl1;
+        public CheckInControl checkInControl1;
     }
 }

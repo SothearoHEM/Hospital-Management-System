@@ -51,9 +51,6 @@ namespace Hospital_Management_System.Control
                     {
                         DataRow row = dt.Rows[0];
 
-                        // Make sure controls exist and are not null
-                        MessageBox.Show("visit id: " + row["VisitID"] + ", patient id: " + row["PatientID"] + ", patient name: " + row["PatientName"] + ", doctor name: " + row["AssignedDoctor"] + ", check in time: " + row["CheckInTime"] + ", room no: " + row["RoomNo"] + ", diagnosis: " + row["Diagnosis"]);
-
                         if (textVisitID != null) textVisitID.Text = row["VisitID"].ToString();
                         if (textPatientID_checkOutForm != null) textPatientID_checkOutForm.Text = row["PatientID"].ToString();
                         if (textPatientName_checkOutForm != null) textPatientName_checkOutForm.Text = row["PatientName"].ToString();
@@ -86,6 +83,112 @@ namespace Hospital_Management_System.Control
 
         private void CheckOutControl_Load(object sender, EventArgs e)
         {
+        }
+
+        private void clear_btn_checkOutForm_Click(object sender, EventArgs e)
+        {
+            chackOutDate_checkOutForm.Value = DateTime.Now;
+            FollowUpData.Value = DateTime.Now;
+            textPrescription.Clear();
+        }
+
+        private void cancel_btn_checkOutForm_Click(object sender, EventArgs e)
+        {
+            var patientControl = this.Parent?.Parent as PatientCheckInOutControl;
+
+            if (patientControl != null)
+            {
+                patientControl.checkInControl1.Visible = true;
+                patientControl.checkInControl1.BringToFront();
+                this.Visible = false;
+            }
+
+            textVisitID?.Clear();
+            textPatientID_checkOutForm?.Clear();
+            textPatientName_checkOutForm?.Clear();
+            textPatientDoctor_checkOutForm?.Clear();
+            chackInDate_checkOutForm?.Clear();
+            textRoomNumber_checkOutForm?.Clear();
+            textDiagnosis_CheckOut_Form?.Clear();
+            textPrescription?.Clear();
+
+            if (chackOutDate_checkOutForm != null) chackOutDate_checkOutForm.Value = DateTime.Now;
+            if (FollowUpData != null) FollowUpData.Value = DateTime.Now;
+        }
+        private bool emptyFields()
+        {
+            return string.IsNullOrWhiteSpace(textVisitID.Text) ||
+                   string.IsNullOrWhiteSpace(textPatientID_checkOutForm.Text) ||
+                   string.IsNullOrWhiteSpace(textPatientName_checkOutForm.Text) ||
+                   string.IsNullOrWhiteSpace(textPatientDoctor_checkOutForm.Text) ||
+                   string.IsNullOrWhiteSpace(chackInDate_checkOutForm.Text) ||
+                   string.IsNullOrWhiteSpace(textRoomNumber_checkOutForm.Text) ||
+                   string.IsNullOrWhiteSpace(textDiagnosis_CheckOut_Form.Text) ||
+                   string.IsNullOrWhiteSpace(textPrescription.Text);
+        }
+
+        private void checkOut_btn_checkOutForm_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (emptyFields())
+                {
+                    MessageBox.Show("Please fill in all required fields.");
+                    return;
+                }
+
+                DialogResult result = MessageBox.Show("Are you sure you want to check out this patient?", "Confirm Check Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    conn.Open();
+                    string VisitID = textVisitID.Text;
+                    string updateVisitQuery = @"UPDATE Visits 
+                        SET CheckOutTime = @CheckOutTime, 
+                            Prescription = @Prescription, 
+                            FollowUpDate = @FollowUpDate, 
+                            Status = 'Checked Out'
+                        WHERE VisitID = @VisitID";
+                    cmd = new SqlCommand(updateVisitQuery, conn);
+                    cmd.Parameters.AddWithValue("@CheckOutTime", chackOutDate_checkOutForm.Value);
+                    cmd.Parameters.AddWithValue("@Prescription", textPrescription.Text);
+                    cmd.Parameters.AddWithValue("@FollowUpDate", FollowUpData.Value);
+                    cmd.Parameters.AddWithValue("@VisitID", VisitID);
+
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Patient checked out successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    var patientControl = this.Parent?.Parent as PatientCheckInOutControl;
+
+                    if (patientControl != null)
+                    {
+                        patientControl.checkInControl1.Visible = true;
+                        patientControl.checkInControl1.BringToFront();
+                        this.Visible = false;
+                    }
+
+                    textVisitID?.Clear();
+                    textPatientID_checkOutForm?.Clear();
+                    textPatientName_checkOutForm?.Clear();
+                    textPatientDoctor_checkOutForm?.Clear();
+                    chackInDate_checkOutForm?.Clear();
+                    textRoomNumber_checkOutForm?.Clear();
+                    textDiagnosis_CheckOut_Form?.Clear();
+                    textPrescription?.Clear();
+
+                    if (chackOutDate_checkOutForm != null) chackOutDate_checkOutForm.Value = DateTime.Now;
+                    if (FollowUpData != null) FollowUpData.Value = DateTime.Now;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error during checkout: " + ex.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
         }
     }
 }

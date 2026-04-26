@@ -42,8 +42,8 @@
             this.dashboardTotalDoctorsLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dashboardGridView = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
+            this.dashboardGridView = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -209,16 +209,6 @@
             this.panel2.Size = new System.Drawing.Size(1167, 418);
             this.panel2.TabIndex = 1;
             // 
-            // dashboardGridView
-            // 
-            this.dashboardGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dashboardGridView.Location = new System.Drawing.Point(3, 35);
-            this.dashboardGridView.Name = "dashboardGridView";
-            this.dashboardGridView.RowHeadersWidth = 51;
-            this.dashboardGridView.RowTemplate.Height = 24;
-            this.dashboardGridView.Size = new System.Drawing.Size(1164, 380);
-            this.dashboardGridView.TabIndex = 0;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -228,6 +218,17 @@
             this.label2.Size = new System.Drawing.Size(273, 32);
             this.label2.TabIndex = 1;
             this.label2.Text = "Today\'s Active Visits";
+            // 
+            // dashboardGridView
+            // 
+            this.dashboardGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dashboardGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dashboardGridView.Location = new System.Drawing.Point(3, 35);
+            this.dashboardGridView.Name = "dashboardGridView";
+            this.dashboardGridView.RowHeadersWidth = 51;
+            this.dashboardGridView.RowTemplate.Height = 24;
+            this.dashboardGridView.Size = new System.Drawing.Size(1164, 380);
+            this.dashboardGridView.TabIndex = 0;
             // 
             // DashhboradControl
             // 

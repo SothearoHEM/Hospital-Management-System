@@ -35,6 +35,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.checkInGridView = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.clear_btn__checkInForm_checkInForm = new System.Windows.Forms.Button();
             this.textPatientDoctorCheckIn = new System.Windows.Forms.ComboBox();
             this.PrintVisitsReport_btn = new System.Windows.Forms.Button();
             this.update_btn__checkInForm_checkInForm = new System.Windows.Forms.Button();
@@ -52,8 +53,6 @@
             this.textPatientIDCheckIn = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.clear_btn__checkInForm_checkInForm = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkInGridView)).BeginInit();
             this.panel2.SuspendLayout();
@@ -154,6 +153,19 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1145, 307);
             this.panel2.TabIndex = 2;
+            // 
+            // clear_btn__checkInForm_checkInForm
+            // 
+            this.clear_btn__checkInForm_checkInForm.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.clear_btn__checkInForm_checkInForm.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clear_btn__checkInForm_checkInForm.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.clear_btn__checkInForm_checkInForm.Location = new System.Drawing.Point(378, 251);
+            this.clear_btn__checkInForm_checkInForm.Name = "clear_btn__checkInForm_checkInForm";
+            this.clear_btn__checkInForm_checkInForm.Size = new System.Drawing.Size(150, 45);
+            this.clear_btn__checkInForm_checkInForm.TabIndex = 52;
+            this.clear_btn__checkInForm_checkInForm.Text = "Clear";
+            this.clear_btn__checkInForm_checkInForm.UseVisualStyleBackColor = false;
+            this.clear_btn__checkInForm_checkInForm.Click += new System.EventHandler(this.clear_btn__checkInForm_checkInForm_Click);
             // 
             // textPatientDoctorCheckIn
             // 
@@ -332,19 +344,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Check In Form";
             // 
-            // clear_btn__checkInForm_checkInForm
-            // 
-            this.clear_btn__checkInForm_checkInForm.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.clear_btn__checkInForm_checkInForm.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clear_btn__checkInForm_checkInForm.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.clear_btn__checkInForm_checkInForm.Location = new System.Drawing.Point(378, 251);
-            this.clear_btn__checkInForm_checkInForm.Name = "clear_btn__checkInForm_checkInForm";
-            this.clear_btn__checkInForm_checkInForm.Size = new System.Drawing.Size(150, 45);
-            this.clear_btn__checkInForm_checkInForm.TabIndex = 52;
-            this.clear_btn__checkInForm_checkInForm.Text = "Clear";
-            this.clear_btn__checkInForm_checkInForm.UseVisualStyleBackColor = false;
-            this.clear_btn__checkInForm_checkInForm.Click += new System.EventHandler(this.clear_btn__checkInForm_checkInForm_Click);
-            // 
             // CheckInControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -388,7 +387,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button PrintVisitsReport_btn;
         private System.Windows.Forms.ComboBox textPatientDoctorCheckIn;
-        private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button clear_btn__checkInForm_checkInForm;
     }
 }

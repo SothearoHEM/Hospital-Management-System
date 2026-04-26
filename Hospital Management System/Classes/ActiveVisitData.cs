@@ -72,5 +72,69 @@ namespace Hospital_Management_System.Classes
             }
             return activeVisitDatas;
         }
+
+        public List<ActiveVisitData> GetTodayActiveVisits()
+        {
+            List<ActiveVisitData> todayVisits = new List<ActiveVisitData>();
+            try
+            {
+                using (SqlConnection conn = DatabaseConnection.GetConnection())
+                {
+                    conn.Open();
+                    string query = "SELECT * FROM Visits WHERE Is_Deleted = 0 AND Status = 'Active' AND CAST(CheckInTime AS DATE) = CAST(GETDATE() AS DATE) ORDER BY CheckInTime DESC";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                ActiveVisitData visitData = new ActiveVisitData
+                                {
+                                    VisitID = reader.GetInt32(reader.GetOrdinal("VisitID")),
+                                    PatientID = reader.GetString(reader.GetOrdinal("PatientID")),
+                                    DoctorID = reader.GetString(reader.GetOrdinal("DoctorID")),
+                                    CheckInTime = reader.GetDateTime(reader.GetOrdinal("CheckInTime")),
+                                    CheckOutTime = reader.IsDBNull(reader.GetOrdinal("CheckOutTime")) ? (DateTime?)null : reader.GetDateTime(reader.GetOrdinal("CheckOutTime")),
+                                    Status = reader.IsDBNull(reader.GetOrdinal("Status")) ? null : reader.GetString(reader.GetOrdinal("Status")),
+                                    RoomNo = reader.IsDBNull(reader.GetOrdinal("RoomNo")) ? null : reader.GetString(reader.GetOrdinal("RoomNo")),
+                                    Reason = reader.IsDBNull(reader.GetOrdinal("Reason")) ? null : reader.GetString(reader.GetOrdinal("Reason")),
+                                    Prescription = reader.IsDBNull(reader.GetOrdinal("Prescription")) ? null : reader.GetString(reader.GetOrdinal("Prescription")),
+                                    FollowUpDate = reader.IsDBNull(reader.GetOrdinal("FollowUpDate")) ? (DateTime?)null : reader.GetDateTime(reader.GetOrdinal("FollowUpDate")),
+                                    Updated_At = reader.GetDateTime(reader.GetOrdinal("Updated_At")),
+                                };
+                                todayVisits.Add(visitData);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error fetching today's active visits: " + ex.Message);
+            }
+            return todayVisits;
+        }
+
+        public int getTotalActiveVisits()
+        {
+            int count = 0;
+            try
+            {
+                using (SqlConnection conn = DatabaseConnection.GetConnection())
+                {
+                    conn.Open();
+                    string query = "SELECT COUNT(*) FROM Visits WHERE Is_Deleted = 0 AND Status = 'Active'";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        count = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error counting active visits: " + ex.Message);
+            }
+            return count;
+        }
     }
 }

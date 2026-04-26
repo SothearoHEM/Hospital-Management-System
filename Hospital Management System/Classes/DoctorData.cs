@@ -78,5 +78,25 @@ namespace Hospital_Management_System.Classes
                 Updated_At = reader["Updated_At"] != DBNull.Value ? Convert.ToDateTime(reader["Updated_At"]) : DateTime.MinValue
             };
         }
+
+        public int getTotalDoctors()
+        {
+            int count = 0;
+            try
+            {
+                using (SqlConnection conn = DatabaseConnection.GetConnection())
+                {
+                    string query = "SELECT COUNT(*) FROM Doctors WHERE Status = 'Active' AND Is_Deleted = 0";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    conn.Open();
+                    count = (int)cmd.ExecuteScalar();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error counting doctors: " + ex.ToString(), ex);
+            }
+            return count;
+        }
     }
 }

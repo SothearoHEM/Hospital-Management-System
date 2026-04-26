@@ -128,6 +128,7 @@
             this.cancel_btn_checkOutForm.TabIndex = 57;
             this.cancel_btn_checkOutForm.Text = "Cancel";
             this.cancel_btn_checkOutForm.UseVisualStyleBackColor = false;
+            this.cancel_btn_checkOutForm.Click += new System.EventHandler(this.cancel_btn_checkOutForm_Click);
             // 
             // FollowUpData
             // 
@@ -169,6 +170,7 @@
             this.clear_btn_checkOutForm.TabIndex = 49;
             this.clear_btn_checkOutForm.Text = "Clear";
             this.clear_btn_checkOutForm.UseVisualStyleBackColor = false;
+            this.clear_btn_checkOutForm.Click += new System.EventHandler(this.clear_btn_checkOutForm_Click);
             // 
             // checkOut_btn_checkOutForm
             // 
@@ -181,6 +183,7 @@
             this.checkOut_btn_checkOutForm.TabIndex = 48;
             this.checkOut_btn_checkOutForm.Text = "Check Out Patient";
             this.checkOut_btn_checkOutForm.UseVisualStyleBackColor = false;
+            this.checkOut_btn_checkOutForm.Click += new System.EventHandler(this.checkOut_btn_checkOutForm_Click);
             // 
             // textPrescription
             // 
@@ -308,6 +311,7 @@
             this.textVisitID.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textVisitID.Location = new System.Drawing.Point(22, 72);
             this.textVisitID.Name = "textVisitID";
+            this.textVisitID.ReadOnly = true;
             this.textVisitID.Size = new System.Drawing.Size(240, 33);
             this.textVisitID.TabIndex = 3;
             // 

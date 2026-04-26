@@ -6,11 +6,9 @@ namespace Hospital_Management_System
 {
     public class DatabaseConnection
     {
-        private static string connectionString =
-            ConfigurationManager.ConnectionStrings["HospitalDB"].ConnectionString;
-
         public static SqlConnection GetConnection()
         {
+            string connectionString = @"Data Source=DESKTOP-HU3F7EL\MSSQLSERVER2022;Initial Catalog=HospitalDB;Integrated Security=True";
             return new SqlConnection(connectionString);
         }
     }

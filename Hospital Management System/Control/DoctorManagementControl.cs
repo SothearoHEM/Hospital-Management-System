@@ -25,6 +25,15 @@ namespace Hospital_Management_System.Control
         {
             InitializeComponent();
             this.Load += DoctorManagementControl_Load;
+            this.VisibleChanged += DoctorManagementControl_VisibleChanged;
+        }
+
+        private void DoctorManagementControl_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible && !this.DesignMode && LicenseManager.UsageMode != LicenseUsageMode.Designtime)
+            {
+                displayDoctors();
+            }
         }
 
         private void DoctorManagementControl_Load(object sender, EventArgs e)

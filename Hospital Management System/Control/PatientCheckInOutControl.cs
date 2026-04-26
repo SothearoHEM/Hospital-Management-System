@@ -20,12 +20,14 @@ namespace Hospital_Management_System.Control
         private void checkIn_btn_Click(object sender, EventArgs e)
         {
             checkInControl1.Visible = true;
+            checkInControl1.BringToFront();
             checkOutControl1.Visible = false;
         }
 
         private void checkOut_btn_Click(object sender, EventArgs e)
         {
             checkOutControl1.Visible = true;
+            checkOutControl1.BringToFront();
             checkInControl1.Visible = false;
         }
     }
