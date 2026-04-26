@@ -198,6 +198,12 @@ namespace Hospital_Management_System.Control
 
         private void update_btn__checkInForm_checkInForm_Click(object sender, EventArgs e)
         {
+            if (emtyFields())
+            {
+                MessageBox.Show("Please fill in all required fields (marked with *).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
                 if(checkInGridView.SelectedRows.Count > 0)
@@ -209,13 +215,14 @@ namespace Hospital_Management_System.Control
                         string visitID = checkInGridView.SelectedRows[0].Cells["VisitID"].Value.ToString();
                         string doctorID = textPatientDoctorCheckIn.SelectedValue.ToString();
                         string updateQuery = @"UPDATE Visits 
-                                               SET DoctorID = @DoctorID, CheckInTime = @CheckInTime, RoomNo = @RoomNo, Reason = @Reason
+                                               SET DoctorID = @DoctorID, CheckInTime = @CheckInTime, RoomNo = @RoomNo, Reason = @Reason , Updated_At = @Updated_At
                                                WHERE VisitID = @VisitID";
                         cmd = new SqlCommand(updateQuery, conn);
                         cmd.Parameters.AddWithValue("@DoctorID", doctorID);
                         cmd.Parameters.AddWithValue("@CheckInTime", checkInDate_CheckInForm.Value);
                         cmd.Parameters.AddWithValue("@RoomNo", textRoomNumber.Text.Trim());
                         cmd.Parameters.AddWithValue("@Reason", textReasonForVisit.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Updated_At", DateTime.Now);
                         cmd.Parameters.AddWithValue("@VisitID", visitID);
                         int rowsAffected = cmd.ExecuteNonQuery();
                         if (rowsAffected > 0)
@@ -291,7 +298,8 @@ namespace Hospital_Management_System.Control
             }
             finally
             {
-                conn.Close();
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
             }
         }
 
@@ -306,9 +314,10 @@ namespace Hospital_Management_System.Control
                     {
                         conn.Open();
                         string visitID = checkInGridView.SelectedRows[0].Cells["VisitID"].Value.ToString();
-                        string deleteQuery = @"UPDATE Visits SET Is_Deleted = 1, Status = 'Inactive' WHERE VisitID = @VisitID";
+                        string deleteQuery = @"UPDATE Visits SET Is_Deleted = 1, Status = 'Inactive', Updated_At = @Updated_At WHERE VisitID = @VisitID";
                         cmd = new SqlCommand(deleteQuery, conn);
                         cmd.Parameters.AddWithValue("@VisitID", visitID);
+                        cmd.Parameters.AddWithValue("@Updated_At", DateTime.Now);
                         int rowsAffected = cmd.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {

@@ -335,9 +335,10 @@ namespace Hospital_Management_System.Control
                 if (result == DialogResult.Yes)
                 {
                     cn.Open();
-                    String sqlDeleteCmd = "UPDATE Doctors SET Is_Deleted = 1, Status = 'Inactive' WHERE DoctorID = @DoctorID";
+                    String sqlDeleteCmd = "UPDATE Doctors SET Is_Deleted = 1, Status = 'Inactive', Updated_At = @Updated_At WHERE DoctorID = @DoctorID";
                     cmd = new SqlCommand(sqlDeleteCmd, cn);
                     cmd.Parameters.AddWithValue("@DoctorID", textDoctorID.Text);
+                    cmd.Parameters.AddWithValue("@Updated_At", DateTime.Now);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Doctor deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

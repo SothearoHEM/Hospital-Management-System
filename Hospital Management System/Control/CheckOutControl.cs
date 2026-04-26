@@ -146,12 +146,14 @@ namespace Hospital_Management_System.Control
                         SET CheckOutTime = @CheckOutTime, 
                             Prescription = @Prescription, 
                             FollowUpDate = @FollowUpDate, 
-                            Status = 'Checked Out'
+                            Status = 'Checked Out',
+                            Updated_At = @Updated_At
                         WHERE VisitID = @VisitID";
                     cmd = new SqlCommand(updateVisitQuery, conn);
                     cmd.Parameters.AddWithValue("@CheckOutTime", chackOutDate_checkOutForm.Value);
                     cmd.Parameters.AddWithValue("@Prescription", textPrescription.Text);
                     cmd.Parameters.AddWithValue("@FollowUpDate", FollowUpData.Value);
+                    cmd.Parameters.AddWithValue("@Updated_At", DateTime.Now);
                     cmd.Parameters.AddWithValue("@VisitID", VisitID);
 
                     cmd.ExecuteNonQuery();

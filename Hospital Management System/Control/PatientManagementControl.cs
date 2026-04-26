@@ -193,10 +193,11 @@ namespace Hospital_Management_System.Control
                 if (result == DialogResult.Yes)
                 {
                     cn.Open();
-                    String sqlDeleteCmd = "UPDATE Patients SET Is_Deleted = 1 WHERE PatientID = @PatientID";
+                    String sqlDeleteCmd = "UPDATE Patients SET Is_Deleted = 1, Updated_At = @Updated_At WHERE PatientID = @PatientID";
                     cmd = new SqlCommand(sqlDeleteCmd, cn);
 
                     cmd.Parameters.AddWithValue("@PatientID", textPatientID.Text);
+                    cmd.Parameters.AddWithValue("@Updated_At", DateTime.Now);
 
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Patient deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
