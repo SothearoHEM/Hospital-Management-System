@@ -1,15 +1,16 @@
 ﻿using Hospital_Management_System.Classes;
+using Hospital_Management_System.Report_Viewer.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace Hospital_Management_System.Control
 {
@@ -362,6 +363,12 @@ namespace Hospital_Management_System.Control
                     cn.Close();
                 }
             }
+        }
+
+        private void doctorsReportPrint_btn_Click(object sender, EventArgs e)
+        {
+            DoctorsReportForm doctorsReportForm = new DoctorsReportForm();
+            doctorsReportForm.Show();
         }
     }
 }

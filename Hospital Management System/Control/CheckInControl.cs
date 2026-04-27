@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Hospital_Management_System.Report_Viewer.Forms;
 
 namespace Hospital_Management_System.Control
 {
@@ -375,6 +376,12 @@ namespace Hospital_Management_System.Control
             {
                 MessageBox.Show("Please select a visit to check out.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void PrintVisitsReport_btn_Click(object sender, EventArgs e)
+        {
+            VisitsReportForm visitsReportForm = new VisitsReportForm();
+            visitsReportForm.Show();
         }
     }
 }

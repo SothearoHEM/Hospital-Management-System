@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.doctorGridView = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textDoctorSpecialization = new System.Windows.Forms.TextBox();
             this.doctorsReportPrint_btn = new System.Windows.Forms.Button();
             this.comboDoctorGender = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -54,7 +55,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textDoctorID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textDoctorSpecialization = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.doctorGridView)).BeginInit();
             this.panel2.SuspendLayout();
@@ -123,6 +123,15 @@
             this.panel2.Size = new System.Drawing.Size(1168, 334);
             this.panel2.TabIndex = 1;
             // 
+            // textDoctorSpecialization
+            // 
+            this.textDoctorSpecialization.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textDoctorSpecialization.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDoctorSpecialization.Location = new System.Drawing.Point(339, 220);
+            this.textDoctorSpecialization.Name = "textDoctorSpecialization";
+            this.textDoctorSpecialization.Size = new System.Drawing.Size(285, 33);
+            this.textDoctorSpecialization.TabIndex = 29;
+            // 
             // doctorsReportPrint_btn
             // 
             this.doctorsReportPrint_btn.BackColor = System.Drawing.SystemColors.HotTrack;
@@ -134,6 +143,7 @@
             this.doctorsReportPrint_btn.TabIndex = 28;
             this.doctorsReportPrint_btn.Text = "Print Doctors Report";
             this.doctorsReportPrint_btn.UseVisualStyleBackColor = false;
+            this.doctorsReportPrint_btn.Click += new System.EventHandler(this.doctorsReportPrint_btn_Click);
             // 
             // comboDoctorGender
             // 
@@ -357,15 +367,6 @@
             this.label2.Size = new System.Drawing.Size(120, 27);
             this.label2.TabIndex = 0;
             this.label2.Text = "Doctor ID *";
-            // 
-            // textDoctorSpecialization
-            // 
-            this.textDoctorSpecialization.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textDoctorSpecialization.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textDoctorSpecialization.Location = new System.Drawing.Point(339, 220);
-            this.textDoctorSpecialization.Name = "textDoctorSpecialization";
-            this.textDoctorSpecialization.Size = new System.Drawing.Size(285, 33);
-            this.textDoctorSpecialization.TabIndex = 29;
             // 
             // DoctorManagementControl
             // 

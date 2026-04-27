@@ -134,6 +134,7 @@ namespace Hospital_Management_System.Control
             this.PrintPatientsReport_btn.TabIndex = 35;
             this.PrintPatientsReport_btn.Text = "Print Patients Report";
             this.PrintPatientsReport_btn.UseVisualStyleBackColor = false;
+            this.PrintPatientsReport_btn.Click += new System.EventHandler(this.PrintPatientsReport_btn_Click);
             // 
             // label4
             // 

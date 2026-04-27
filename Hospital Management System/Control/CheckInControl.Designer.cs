@@ -187,6 +187,7 @@
             this.PrintVisitsReport_btn.TabIndex = 50;
             this.PrintVisitsReport_btn.Text = "Print Visits Report";
             this.PrintVisitsReport_btn.UseVisualStyleBackColor = false;
+            this.PrintVisitsReport_btn.Click += new System.EventHandler(this.PrintVisitsReport_btn_Click);
             // 
             // update_btn__checkInForm_checkInForm
             // 

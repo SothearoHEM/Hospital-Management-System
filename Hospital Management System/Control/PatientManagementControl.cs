@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Hospital_Management_System.Report_Viewer.Forms;
 
 namespace Hospital_Management_System.Control
 {
@@ -244,6 +245,12 @@ namespace Hospital_Management_System.Control
                 textPatientAllergies.Text = row.Cells["Allergies"].Value?.ToString();
                 textPatientDiagnosis.Text = row.Cells["Diagnosis"].Value?.ToString();
             }
+        }
+
+        private void PrintPatientsReport_btn_Click(object sender, EventArgs e)
+        {
+            PatientsReportForm reportForm = new PatientsReportForm();
+            reportForm.Show();
         }
     }
 }
