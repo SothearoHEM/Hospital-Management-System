@@ -28,12 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.patientReportModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewerPatients = new Microsoft.Reporting.WinForms.ReportViewer();
+            ((System.ComponentModel.ISupportInitialize)(this.patientReportModelBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // patientReportModelBindingSource
+            // 
+            this.patientReportModelBindingSource.DataSource = typeof(Hospital_Management_System.Report_Viewer.Classes.PatientReportModel);
             // 
             // reportViewerPatients
             // 
             this.reportViewerPatients.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.patientReportModelBindingSource;
+            this.reportViewerPatients.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewerPatients.LocalReport.ReportEmbeddedResource = "Hospital_Management_System.Report Viewer.WiZards.PatientsWizard.rdlc";
             this.reportViewerPatients.Location = new System.Drawing.Point(0, 0);
             this.reportViewerPatients.Name = "reportViewerPatients";
@@ -50,6 +61,7 @@
             this.Name = "PatientsReportForm";
             this.Text = "PatientsReportForm";
             this.Load += new System.EventHandler(this.PatientsReportForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.patientReportModelBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -57,5 +69,6 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerPatients;
+        private System.Windows.Forms.BindingSource patientReportModelBindingSource;
     }
 }

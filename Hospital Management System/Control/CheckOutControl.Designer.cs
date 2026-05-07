@@ -53,11 +53,13 @@
             this.textVisitID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.Print_Patien_Receipt_btn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.Print_Patien_Receipt_btn);
             this.panel2.Controls.Add(this.textPatientID_checkOutForm);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.chackInDate_checkOutForm);
@@ -119,10 +121,10 @@
             // 
             // cancel_btn_checkOutForm
             // 
-            this.cancel_btn_checkOutForm.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.cancel_btn_checkOutForm.BackColor = System.Drawing.Color.IndianRed;
             this.cancel_btn_checkOutForm.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancel_btn_checkOutForm.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.cancel_btn_checkOutForm.Location = new System.Drawing.Point(967, 571);
+            this.cancel_btn_checkOutForm.Location = new System.Drawing.Point(795, 571);
             this.cancel_btn_checkOutForm.Name = "cancel_btn_checkOutForm";
             this.cancel_btn_checkOutForm.Size = new System.Drawing.Size(155, 45);
             this.cancel_btn_checkOutForm.TabIndex = 57;
@@ -164,7 +166,7 @@
             this.clear_btn_checkOutForm.BackColor = System.Drawing.SystemColors.HotTrack;
             this.clear_btn_checkOutForm.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clear_btn_checkOutForm.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.clear_btn_checkOutForm.Location = new System.Drawing.Point(815, 571);
+            this.clear_btn_checkOutForm.Location = new System.Drawing.Point(643, 571);
             this.clear_btn_checkOutForm.Name = "clear_btn_checkOutForm";
             this.clear_btn_checkOutForm.Size = new System.Drawing.Size(146, 45);
             this.clear_btn_checkOutForm.TabIndex = 49;
@@ -177,9 +179,9 @@
             this.checkOut_btn_checkOutForm.BackColor = System.Drawing.SystemColors.HotTrack;
             this.checkOut_btn_checkOutForm.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkOut_btn_checkOutForm.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkOut_btn_checkOutForm.Location = new System.Drawing.Point(591, 571);
+            this.checkOut_btn_checkOutForm.Location = new System.Drawing.Point(22, 571);
             this.checkOut_btn_checkOutForm.Name = "checkOut_btn_checkOutForm";
-            this.checkOut_btn_checkOutForm.Size = new System.Drawing.Size(218, 45);
+            this.checkOut_btn_checkOutForm.Size = new System.Drawing.Size(240, 45);
             this.checkOut_btn_checkOutForm.TabIndex = 48;
             this.checkOut_btn_checkOutForm.Text = "Check Out Patient";
             this.checkOut_btn_checkOutForm.UseVisualStyleBackColor = false;
@@ -189,17 +191,17 @@
             // 
             this.textPrescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textPrescription.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textPrescription.Location = new System.Drawing.Point(591, 236);
+            this.textPrescription.Location = new System.Drawing.Point(608, 236);
             this.textPrescription.Multiline = true;
             this.textPrescription.Name = "textPrescription";
-            this.textPrescription.Size = new System.Drawing.Size(531, 329);
+            this.textPrescription.Size = new System.Drawing.Size(514, 329);
             this.textPrescription.TabIndex = 47;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(586, 206);
+            this.label12.Location = new System.Drawing.Point(603, 206);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(125, 27);
             this.label12.TabIndex = 46;
@@ -213,7 +215,7 @@
             this.textDiagnosis_CheckOut_Form.Multiline = true;
             this.textDiagnosis_CheckOut_Form.Name = "textDiagnosis_CheckOut_Form";
             this.textDiagnosis_CheckOut_Form.ReadOnly = true;
-            this.textDiagnosis_CheckOut_Form.Size = new System.Drawing.Size(548, 380);
+            this.textDiagnosis_CheckOut_Form.Size = new System.Drawing.Size(563, 329);
             this.textDiagnosis_CheckOut_Form.TabIndex = 45;
             // 
             // label11
@@ -335,6 +337,19 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Check Out Form";
             // 
+            // Print_Patien_Receipt_btn
+            // 
+            this.Print_Patien_Receipt_btn.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.Print_Patien_Receipt_btn.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Print_Patien_Receipt_btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Print_Patien_Receipt_btn.Location = new System.Drawing.Point(268, 571);
+            this.Print_Patien_Receipt_btn.Name = "Print_Patien_Receipt_btn";
+            this.Print_Patien_Receipt_btn.Size = new System.Drawing.Size(369, 45);
+            this.Print_Patien_Receipt_btn.TabIndex = 61;
+            this.Print_Patien_Receipt_btn.Text = "Print Patien Medical Bill Receipt";
+            this.Print_Patien_Receipt_btn.UseVisualStyleBackColor = false;
+            this.Print_Patien_Receipt_btn.Click += new System.EventHandler(this.Print_Patien_Receipt_btn_Click);
+            // 
             // CheckOutControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -376,5 +391,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textPatientID_checkOutForm;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button Print_Patien_Receipt_btn;
     }
 }

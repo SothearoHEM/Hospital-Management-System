@@ -55,6 +55,8 @@ namespace Hospital_Management_System.Control
             this.label3 = new System.Windows.Forms.Label();
             this.textPatientID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.comboPatientAssignedDoctor = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientGridView)).BeginInit();
             this.panel2.SuspendLayout();
@@ -94,6 +96,8 @@ namespace Hospital_Management_System.Control
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.comboPatientAssignedDoctor);
             this.panel2.Controls.Add(this.PrintPatientsReport_btn);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.textPatientDiagnosis);
@@ -140,7 +144,7 @@ namespace Hospital_Management_System.Control
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(314, 86);
+            this.label4.Location = new System.Drawing.Point(610, 86);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(121, 27);
             this.label4.TabIndex = 34;
@@ -150,17 +154,17 @@ namespace Hospital_Management_System.Control
             // 
             this.textPatientDiagnosis.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textPatientDiagnosis.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textPatientDiagnosis.Location = new System.Drawing.Point(603, 146);
+            this.textPatientDiagnosis.Location = new System.Drawing.Point(615, 188);
             this.textPatientDiagnosis.Multiline = true;
             this.textPatientDiagnosis.Name = "textPatientDiagnosis";
-            this.textPatientDiagnosis.Size = new System.Drawing.Size(250, 194);
+            this.textPatientDiagnosis.Size = new System.Drawing.Size(250, 152);
             this.textPatientDiagnosis.TabIndex = 33;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(598, 116);
+            this.label12.Location = new System.Drawing.Point(610, 158);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(104, 27);
             this.label12.TabIndex = 32;
@@ -170,10 +174,10 @@ namespace Hospital_Management_System.Control
             // 
             this.textPatientAllergies.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textPatientAllergies.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textPatientAllergies.Location = new System.Drawing.Point(311, 188);
+            this.textPatientAllergies.Location = new System.Drawing.Point(315, 188);
             this.textPatientAllergies.Multiline = true;
             this.textPatientAllergies.Name = "textPatientAllergies";
-            this.textPatientAllergies.Size = new System.Drawing.Size(250, 152);
+            this.textPatientAllergies.Size = new System.Drawing.Size(286, 152);
             this.textPatientAllergies.TabIndex = 31;
             // 
             // comboPatientBloodType
@@ -203,7 +207,7 @@ namespace Hospital_Management_System.Control
             "",
             "",
             "O-"});
-            this.comboPatientBloodType.Location = new System.Drawing.Point(311, 116);
+            this.comboPatientBloodType.Location = new System.Drawing.Point(615, 115);
             this.comboPatientBloodType.Name = "comboPatientBloodType";
             this.comboPatientBloodType.Size = new System.Drawing.Size(250, 35);
             this.comboPatientBloodType.TabIndex = 30;
@@ -211,7 +215,7 @@ namespace Hospital_Management_System.Control
             // patientDOB
             // 
             this.patientDOB.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patientDOB.Location = new System.Drawing.Point(603, 41);
+            this.patientDOB.Location = new System.Drawing.Point(615, 41);
             this.patientDOB.Name = "patientDOB";
             this.patientDOB.Size = new System.Drawing.Size(250, 33);
             this.patientDOB.TabIndex = 26;
@@ -286,7 +290,7 @@ namespace Hospital_Management_System.Control
             this.textPatientPhoneNumber.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textPatientPhoneNumber.Location = new System.Drawing.Point(24, 116);
             this.textPatientPhoneNumber.Name = "textPatientPhoneNumber";
-            this.textPatientPhoneNumber.Size = new System.Drawing.Size(250, 33);
+            this.textPatientPhoneNumber.Size = new System.Drawing.Size(281, 33);
             this.textPatientPhoneNumber.TabIndex = 17;
             // 
             // label9
@@ -303,7 +307,7 @@ namespace Hospital_Management_System.Control
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(306, 162);
+            this.label8.Location = new System.Drawing.Point(310, 162);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(165, 27);
             this.label8.TabIndex = 14;
@@ -326,7 +330,7 @@ namespace Hospital_Management_System.Control
             this.textPatientAddress.Location = new System.Drawing.Point(24, 188);
             this.textPatientAddress.Multiline = true;
             this.textPatientAddress.Name = "textPatientAddress";
-            this.textPatientAddress.Size = new System.Drawing.Size(250, 152);
+            this.textPatientAddress.Size = new System.Drawing.Size(276, 152);
             this.textPatientAddress.TabIndex = 9;
             // 
             // label6
@@ -343,16 +347,16 @@ namespace Hospital_Management_System.Control
             // 
             this.textPatientFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textPatientFirstName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textPatientFirstName.Location = new System.Drawing.Point(311, 41);
+            this.textPatientFirstName.Location = new System.Drawing.Point(315, 41);
             this.textPatientFirstName.Name = "textPatientFirstName";
-            this.textPatientFirstName.Size = new System.Drawing.Size(250, 33);
+            this.textPatientFirstName.Size = new System.Drawing.Size(286, 33);
             this.textPatientFirstName.TabIndex = 7;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(306, 11);
+            this.label5.Location = new System.Drawing.Point(310, 11);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(123, 27);
             this.label5.TabIndex = 6;
@@ -362,7 +366,7 @@ namespace Hospital_Management_System.Control
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(598, 12);
+            this.label3.Location = new System.Drawing.Point(610, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(148, 27);
             this.label3.TabIndex = 2;
@@ -374,7 +378,7 @@ namespace Hospital_Management_System.Control
             this.textPatientID.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textPatientID.Location = new System.Drawing.Point(24, 41);
             this.textPatientID.Name = "textPatientID";
-            this.textPatientID.Size = new System.Drawing.Size(250, 33);
+            this.textPatientID.Size = new System.Drawing.Size(281, 33);
             this.textPatientID.TabIndex = 1;
             // 
             // label2
@@ -387,6 +391,48 @@ namespace Hospital_Management_System.Control
             this.label2.TabIndex = 0;
             this.label2.Text = "Patient ID *";
             // 
+            // comboPatientAssignedDoctor
+            // 
+            this.comboPatientAssignedDoctor.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboPatientAssignedDoctor.FormattingEnabled = true;
+            this.comboPatientAssignedDoctor.Items.AddRange(new object[] {
+            "A+",
+            "",
+            "",
+            "A-",
+            "",
+            "",
+            "B+",
+            "",
+            "",
+            "B-",
+            "",
+            "",
+            "AB+",
+            "",
+            "",
+            "AB-",
+            "",
+            "",
+            "O+",
+            "",
+            "",
+            "O-"});
+            this.comboPatientAssignedDoctor.Location = new System.Drawing.Point(315, 116);
+            this.comboPatientAssignedDoctor.Name = "comboPatientAssignedDoctor";
+            this.comboPatientAssignedDoctor.Size = new System.Drawing.Size(286, 35);
+            this.comboPatientAssignedDoctor.TabIndex = 36;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(312, 86);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(185, 27);
+            this.label10.TabIndex = 37;
+            this.label10.Text = "Assigned Doctor *";
+            // 
             // PatientManagementControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -395,6 +441,7 @@ namespace Hospital_Management_System.Control
             this.Controls.Add(this.panel1);
             this.Name = "PatientManagementControl";
             this.Size = new System.Drawing.Size(1190, 716);
+            this.Load += new System.EventHandler(this.PatientManagementControl_Load_1);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientGridView)).EndInit();
@@ -433,5 +480,7 @@ namespace Hospital_Management_System.Control
         private System.Windows.Forms.DateTimePicker patientDOB;
         private System.Windows.Forms.Button PrintPatientsReport_btn;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox comboPatientAssignedDoctor;
     }
 }

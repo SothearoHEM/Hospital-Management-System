@@ -30,54 +30,14 @@ namespace Hospital_Management_System.Control
             if (this.Visible)
             {
                 DisplayCheckInData();
-                LoadActiveDoctors();
             }
         }
 
         private void CheckInControl_Load_1(object sender, EventArgs e)
         {
-            LoadActiveDoctors();
+
         }
 
-        private void LoadActiveDoctors()
-        {
-            try
-            {
-                conn.Open();
-                string query = @"SELECT DoctorID, FullName
-                                 FROM Doctors
-                                 WHERE Status = 'Active' AND Is_Deleted = 0
-                                 ORDER BY FullName ASC";
-                cmd = new SqlCommand(query, conn);
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                var doctors = new List<DoctorItem>();
-                while (reader.Read())
-                {
-                    doctors.Add(new DoctorItem
-                    {
-                        DoctorID = reader["DoctorID"].ToString(),
-                        DisplayText = reader["DoctorID"].ToString() + " - " + reader["FullName"].ToString()
-                    });
-                }
-                reader.Close();
-
-                textPatientDoctorCheckIn.DisplayMember = "DisplayText"; 
-                textPatientDoctorCheckIn.ValueMember = "DoctorID"; 
-                textPatientDoctorCheckIn.DataSource = doctors;
-                
-                textPatientDoctorCheckIn.SelectedIndex = -1;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error loading doctors: " + ex.Message, "Load Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                    conn.Close();
-            }
-        }
 
         public class DoctorItem
         {
@@ -88,6 +48,30 @@ namespace Hospital_Management_System.Control
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+        private string GetAssignedDoctorName(string patientID)
+        {
+            try
+            {
+                string query = @"SELECT d.DoctorID, d.FullName 
+                                 FROM Patients p
+                                 JOIN Doctors d ON p.DoctorID = d.DoctorID
+                                 WHERE p.PatientID = @PatientID";
+                cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@PatientID", patientID);
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return $"{reader["DoctorID"]} - {reader["FullName"]}";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error retrieving doctor information: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return "No doctor assigned";
         }
 
         public void DisplayCheckInData()
@@ -102,15 +86,24 @@ namespace Hospital_Management_System.Control
             {
                 conn.Open();
                 string searchTerm = textPatientIDCheckIn.Text.Trim();
-                string query = @"SELECT PatientID, FullName FROM Patients 
-                                 WHERE (PatientID LIKE @SearchTerm OR FullName LIKE @SearchTerm) 
-                                 AND Is_Deleted = 0";
+                string query = @"SELECT PatientID, FullName,DoctorID FROM Patients WHERE PatientID LIKE @SearchTerm OR FullName LIKE @SearchTerm";
                 cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@SearchTerm", "%" + searchTerm + "%");
                 DataSet dataSet = new DataSet();
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(dataSet);
-                textPatientNameCheckIn.Text = dataSet.Tables[0].Rows.Count > 0 ? dataSet.Tables[0].Rows[0]["FullName"].ToString() : "No patient found";
+                
+                if (dataSet.Tables.Count > 0 && dataSet.Tables[0].Rows.Count > 0)
+                {
+                    textPatientIDCheckIn.Text = dataSet.Tables[0].Rows[0]["PatientID"].ToString();
+                    textPatientNameCheckIn.Text = dataSet.Tables[0].Rows[0]["FullName"].ToString();
+                    textPatientDoctorCheckIn.Text = GetAssignedDoctorName(dataSet.Tables[0].Rows[0]["PatientID"].ToString());
+                }
+                else
+                {
+                    textPatientNameCheckIn.Text = "No patient found";
+                    textPatientDoctorCheckIn.Text = "No doctor assigned";
+                }
             }
             catch (Exception ex)
             {
@@ -133,7 +126,7 @@ namespace Hospital_Management_System.Control
             try
             {
                 conn.Open();
-                string doctorID = textPatientDoctorCheckIn.SelectedValue.ToString();
+                string doctorID = textPatientDoctorCheckIn.Text.Split('-')[0].Trim();
                 string insertQuery = @"INSERT INTO Visits (PatientID, DoctorID, CheckInTime, RoomNo, Reason, Status)
                                        VALUES (@PatientID, @DoctorID, @CheckInTime, @RoomNo, @Reason, @Status)";
                 cmd = new SqlCommand(insertQuery, conn);
@@ -170,7 +163,7 @@ namespace Hospital_Management_System.Control
         {
             if (string.IsNullOrWhiteSpace(textPatientIDCheckIn.Text) ||
                 string.IsNullOrWhiteSpace(textPatientNameCheckIn.Text) ||
-                textPatientDoctorCheckIn.SelectedValue == null ||
+                textPatientDoctorCheckIn.Text == "No doctor assigned" ||
                 string.IsNullOrWhiteSpace(textRoomNumber.Text) ||
                 string.IsNullOrWhiteSpace(textReasonForVisit.Text))
             {
@@ -186,7 +179,7 @@ namespace Hospital_Management_System.Control
         {
             textPatientIDCheckIn.Clear();
             textPatientNameCheckIn.Clear();
-            textPatientDoctorCheckIn.SelectedIndex = -1;
+            textPatientDoctorCheckIn.Clear();
             textRoomNumber.Clear();
             textReasonForVisit.Clear();
             checkInDate_CheckInForm.Value = DateTime.Now;
@@ -214,7 +207,7 @@ namespace Hospital_Management_System.Control
                     {
                         conn.Open();
                         string visitID = checkInGridView.SelectedRows[0].Cells["VisitID"].Value.ToString();
-                        string doctorID = textPatientDoctorCheckIn.SelectedValue.ToString();
+                        string doctorID = textPatientDoctorCheckIn.Text.Split('-')[0].Trim();
                         string updateQuery = @"UPDATE Visits 
                                                SET DoctorID = @DoctorID, CheckInTime = @CheckInTime, RoomNo = @RoomNo, Reason = @Reason , Updated_At = @Updated_At
                                                WHERE VisitID = @VisitID";
@@ -280,15 +273,9 @@ namespace Hospital_Management_System.Control
                         textReasonForVisit.Text = reader["Reason"].ToString();
                         checkInDate_CheckInForm.Value = Convert.ToDateTime(reader["CheckInTime"]);
                         string doctorID = reader["DoctorID"].ToString();
-                        for (int i = 0; i < textPatientDoctorCheckIn.Items.Count; i++)
-                        {
-                            DoctorItem item = (DoctorItem)textPatientDoctorCheckIn.Items[i];
-                            if (item.DoctorID == doctorID)
-                            {
-                                textPatientDoctorCheckIn.SelectedIndex = i;
-                                break;
-                            }
-                        }
+                        string doctorName = reader["DoctorName"].ToString();
+                        textPatientDoctorCheckIn.Text = $"{doctorID} - {doctorName}";
+
                     }
                     reader.Close();
                 }

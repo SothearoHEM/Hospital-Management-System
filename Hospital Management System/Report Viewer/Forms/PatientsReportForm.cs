@@ -50,6 +50,7 @@ namespace Hospital_Management_System.Report_Viewer.Forms
                             Gender = dr["Gender"].ToString(),
                             Phone = dr["Phone"].ToString(),
                             Address = dr["Address"].ToString(),
+                            DoctorID = dr["DoctorID"].ToString(),
                             BloodType = dr["BloodType"].ToString(),
                             Allergies = dr["Allergies"].ToString(),
                             Diagnosis = dr["Diagnosis"].ToString(),
@@ -71,6 +72,11 @@ namespace Hospital_Management_System.Report_Viewer.Forms
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void patientReportModelBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

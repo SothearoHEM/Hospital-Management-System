@@ -138,6 +138,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Report Viewer\Classes\DoctorReportModel.cs" />
+    <Compile Include="Report Viewer\Classes\PatienMedicalBillReceiptModel.cs" />
     <Compile Include="Report Viewer\Classes\PatientReportModel.cs" />
     <Compile Include="Report Viewer\Classes\VisitReportModel.cs" />
     <Compile Include="Report Viewer\Forms\DoctorsReportForm.cs">
@@ -145,6 +146,12 @@
     </Compile>
     <Compile Include="Report Viewer\Forms\DoctorsReportForm.Designer.cs">
       <DependentUpon>DoctorsReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report Viewer\Forms\PatienMedicalBillReceipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report Viewer\Forms\PatienMedicalBillReceipt.Designer.cs">
+      <DependentUpon>PatienMedicalBillReceipt.cs</DependentUpon>
     </Compile>
     <Compile Include="Report Viewer\Forms\PatientsReportForm.cs">
       <SubType>Form</SubType>
@@ -196,6 +203,9 @@
     <EmbeddedResource Include="Report Viewer\Forms\DoctorsReportForm.resx">
       <DependentUpon>DoctorsReportForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report Viewer\Forms\PatienMedicalBillReceipt.resx">
+      <DependentUpon>PatienMedicalBillReceipt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report Viewer\Forms\PatientsReportForm.resx">
       <DependentUpon>PatientsReportForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,6 +215,7 @@
     <EmbeddedResource Include="Report Viewer\WiZards\DoctorsWizard.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report Viewer\WiZards\PatienMedicalBillReceiptWizard.rdlc" />
     <EmbeddedResource Include="Report Viewer\WiZards\PatientsWizard.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -213,6 +224,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Hospital_Management_System.Report_Viewer.Classes.DoctorReportModel.datasource" />
+    <None Include="Properties\DataSources\Hospital_Management_System.Report_Viewer.Classes.PatienMedicalBillReceiptModel.datasource" />
     <None Include="Properties\DataSources\Hospital_Management_System.Report_Viewer.Classes.PatientReportModel.datasource" />
     <None Include="Properties\DataSources\Hospital_Management_System.Report_Viewer.Classes.VisitReportModel.datasource" />
     <None Include="Properties\Settings.settings">

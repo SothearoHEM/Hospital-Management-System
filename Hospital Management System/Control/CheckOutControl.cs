@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Hospital_Management_System.Report_Viewer.Forms;
 
 namespace Hospital_Management_System.Control
 {
@@ -191,6 +192,12 @@ namespace Hospital_Management_System.Control
                 if (conn.State == ConnectionState.Open)
                     conn.Close();
             }
+        }
+
+        private void Print_Patien_Receipt_btn_Click(object sender, EventArgs e)
+        {
+            PatienMedicalBillReceipt r1 = new PatienMedicalBillReceipt();
+            r1.Show(); 
         }
     }
 }

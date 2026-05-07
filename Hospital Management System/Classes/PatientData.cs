@@ -14,6 +14,7 @@ namespace Hospital_Management_System.Classes
         public string Gender { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
+        public string DoctorID { get; set; }
         public string BloodType { get; set; }
         public string Allergies { get; set; }
         public string Diagnosis { get; set; }
@@ -35,7 +36,7 @@ namespace Hospital_Management_System.Classes
             {
                 using (SqlConnection conn = DatabaseConnection.GetConnection())
                 {
-                    string query = @"SELECT PatientID, FullName, DOB, Gender, Phone, Address, BloodType, Allergies, Diagnosis, Updated_At
+                    string query = @"SELECT PatientID, FullName, DOB, Gender, Phone, Address,DoctorID, BloodType, Allergies, Diagnosis, Updated_At
                                    FROM Patients
                                    WHERE Is_Deleted = 0
                                    ORDER BY FullName";
@@ -68,6 +69,7 @@ namespace Hospital_Management_System.Classes
                 Gender = reader["Gender"]?.ToString(),
                 Phone = reader["Phone"]?.ToString(),
                 Address = reader["Address"]?.ToString(),
+                DoctorID = reader["DoctorID"]?.ToString(),
                 BloodType = reader["BloodType"]?.ToString(),
                 Allergies = reader["Allergies"]?.ToString(),
                 Diagnosis = reader["Diagnosis"]?.ToString(),

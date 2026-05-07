@@ -36,7 +36,6 @@
             this.checkInGridView = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.clear_btn__checkInForm_checkInForm = new System.Windows.Forms.Button();
-            this.textPatientDoctorCheckIn = new System.Windows.Forms.ComboBox();
             this.PrintVisitsReport_btn = new System.Windows.Forms.Button();
             this.update_btn__checkInForm_checkInForm = new System.Windows.Forms.Button();
             this.checkIn_btn_checkInForm = new System.Windows.Forms.Button();
@@ -53,6 +52,7 @@
             this.textPatientIDCheckIn = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.textPatientDoctorCheckIn = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkInGridView)).BeginInit();
             this.panel2.SuspendLayout();
@@ -111,7 +111,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.IndianRed;
-            this.label13.Location = new System.Drawing.Point(409, 279);
+            this.label13.Location = new System.Drawing.Point(410, 279);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(266, 23);
             this.label13.TabIndex = 50;
@@ -131,8 +131,8 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.clear_btn__checkInForm_checkInForm);
             this.panel2.Controls.Add(this.textPatientDoctorCheckIn);
+            this.panel2.Controls.Add(this.clear_btn__checkInForm_checkInForm);
             this.panel2.Controls.Add(this.PrintVisitsReport_btn);
             this.panel2.Controls.Add(this.update_btn__checkInForm_checkInForm);
             this.panel2.Controls.Add(this.checkIn_btn_checkInForm);
@@ -166,15 +166,6 @@
             this.clear_btn__checkInForm_checkInForm.Text = "Clear";
             this.clear_btn__checkInForm_checkInForm.UseVisualStyleBackColor = false;
             this.clear_btn__checkInForm_checkInForm.Click += new System.EventHandler(this.clear_btn__checkInForm_checkInForm_Click);
-            // 
-            // textPatientDoctorCheckIn
-            // 
-            this.textPatientDoctorCheckIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textPatientDoctorCheckIn.FormattingEnabled = true;
-            this.textPatientDoctorCheckIn.Location = new System.Drawing.Point(761, 63);
-            this.textPatientDoctorCheckIn.Name = "textPatientDoctorCheckIn";
-            this.textPatientDoctorCheckIn.Size = new System.Drawing.Size(361, 37);
-            this.textPatientDoctorCheckIn.TabIndex = 51;
             // 
             // PrintVisitsReport_btn
             // 
@@ -345,6 +336,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Check In Form";
             // 
+            // textPatientDoctorCheckIn
+            // 
+            this.textPatientDoctorCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textPatientDoctorCheckIn.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPatientDoctorCheckIn.Location = new System.Drawing.Point(763, 66);
+            this.textPatientDoctorCheckIn.Name = "textPatientDoctorCheckIn";
+            this.textPatientDoctorCheckIn.ReadOnly = true;
+            this.textPatientDoctorCheckIn.Size = new System.Drawing.Size(359, 33);
+            this.textPatientDoctorCheckIn.TabIndex = 53;
+            // 
             // CheckInControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -387,7 +388,7 @@
         private System.Windows.Forms.Button delete_btn_checkInForm;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button PrintVisitsReport_btn;
-        private System.Windows.Forms.ComboBox textPatientDoctorCheckIn;
         private System.Windows.Forms.Button clear_btn__checkInForm_checkInForm;
+        private System.Windows.Forms.TextBox textPatientDoctorCheckIn;
     }
 }

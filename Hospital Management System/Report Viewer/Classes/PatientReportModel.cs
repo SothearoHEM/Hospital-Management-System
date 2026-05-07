@@ -14,6 +14,7 @@ namespace Hospital_Management_System.Report_Viewer.Classes
         public string Gender { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
+        public string DoctorID { get; set; }
         public string BloodType { get; set; }
         public string Allergies { get; set; }
         public string Diagnosis { get; set; }

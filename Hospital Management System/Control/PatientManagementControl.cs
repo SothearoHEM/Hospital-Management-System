@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital_Management_System.Report_Viewer.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Hospital_Management_System.Report_Viewer.Forms;
+using static Hospital_Management_System.Control.CheckInControl;
 
 namespace Hospital_Management_System.Control
 {
@@ -29,6 +30,51 @@ namespace Hospital_Management_System.Control
             if (this.Visible && !this.DesignMode && LicenseManager.UsageMode != LicenseUsageMode.Designtime)
             {
                 displayPatientsData();
+                LoadActiveDoctors();
+            }
+        }
+        private void PatientManagementControl_Load_1(object sender, EventArgs e)
+        {
+            LoadActiveDoctors();
+        }
+
+        private void LoadActiveDoctors()
+        {
+            try
+            {
+                cn.Open();
+                string query = @"SELECT DoctorID, FullName
+                                 FROM Doctors
+                                 WHERE Status = 'Active' AND Is_Deleted = 0
+                                 ORDER BY FullName ASC";
+                cmd = new SqlCommand(query, cn);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                var doctors = new List<DoctorItem>();
+                while (reader.Read())
+                {
+                    doctors.Add(new DoctorItem
+                    {
+                        DoctorID = reader["DoctorID"].ToString(),
+                        DisplayText = reader["DoctorID"].ToString() + " - " + reader["FullName"].ToString()
+                    });
+                }
+                reader.Close();
+
+                comboPatientAssignedDoctor.DisplayMember = "DisplayText";
+                comboPatientAssignedDoctor.ValueMember = "DoctorID";
+                comboPatientAssignedDoctor.DataSource = doctors;
+
+                comboPatientAssignedDoctor.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading doctors: " + ex.Message, "Load Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (cn.State == ConnectionState.Open)
+                    cn.Close();
             }
         }
 
@@ -61,6 +107,7 @@ namespace Hospital_Management_System.Control
             patientDOB.Value = DateTime.Now.AddYears(-30);
             textPatientPhoneNumber.Clear();
             textPatientAddress.Clear();
+            comboPatientAssignedDoctor.SelectedIndex = -1;
             comboPatientBloodType.SelectedIndex = -1;
             textPatientAllergies.Clear();
             textPatientDiagnosis.Clear();
@@ -73,6 +120,7 @@ namespace Hospital_Management_System.Control
                 comboPatientGender.SelectedIndex == -1 ||
                 string.IsNullOrWhiteSpace(textPatientPhoneNumber.Text) ||
                 string.IsNullOrWhiteSpace(textPatientAddress.Text) ||
+                comboPatientAssignedDoctor.SelectedIndex == -1 ||
                 comboPatientBloodType.SelectedIndex == -1 ||
                 string.IsNullOrWhiteSpace(textPatientAllergies.Text) ||
                 string.IsNullOrWhiteSpace(textPatientDiagnosis.Text))
@@ -93,8 +141,8 @@ namespace Hospital_Management_System.Control
                 }
 
                 cn.Open();
-                String sqlInsertCmd = @"INSERT INTO Patients (PatientID, FullName, DOB, Gender, Phone, Address, BloodType, Allergies, Diagnosis)
-                                       VALUES (@PatientID, @FullName, @DOB, @Gender, @Phone, @Address, @BloodType, @Allergies, @Diagnosis)";
+                String sqlInsertCmd = @"INSERT INTO Patients (PatientID, FullName, DOB, Gender, Phone, Address, DoctorID, BloodType, Allergies, Diagnosis)
+                                       VALUES (@PatientID, @FullName, @DOB, @Gender, @Phone, @Address,@DoctorID, @BloodType, @Allergies, @Diagnosis)";
                 cmd = new SqlCommand(sqlInsertCmd, cn);
 
                 cmd.Parameters.AddWithValue("@PatientID", textPatientID.Text);
@@ -103,6 +151,7 @@ namespace Hospital_Management_System.Control
                 cmd.Parameters.AddWithValue("@Gender", comboPatientGender.SelectedItem.ToString());
                 cmd.Parameters.AddWithValue("@Phone", textPatientPhoneNumber.Text);
                 cmd.Parameters.AddWithValue("@Address", textPatientAddress.Text);
+                cmd.Parameters.AddWithValue("@DoctorID", comboPatientAssignedDoctor.SelectedValue != null ? comboPatientAssignedDoctor.SelectedValue.ToString() : (object)DBNull.Value);
                 cmd.Parameters.AddWithValue("@BloodType", comboPatientBloodType.SelectedItem.ToString());
                 cmd.Parameters.AddWithValue("@Allergies", textPatientAllergies.Text);
                 cmd.Parameters.AddWithValue("@Diagnosis", textPatientDiagnosis.Text);
@@ -145,7 +194,7 @@ namespace Hospital_Management_System.Control
                 if (result == DialogResult.Yes)
                 {
                     cn.Open();
-                    String sqlUpdateCmd = @"UPDATE Patients SET FullName = @FullName, DOB = @DOB, Gender = @Gender, Phone = @Phone, Address = @Address, BloodType = @BloodType, Allergies = @Allergies, Diagnosis = @Diagnosis, Updated_At = @Updated_At
+                    String sqlUpdateCmd = @"UPDATE Patients SET FullName = @FullName, DOB = @DOB, Gender = @Gender, Phone = @Phone, Address = @Address,DoctorID = @DoctorID, BloodType = @BloodType, Allergies = @Allergies, Diagnosis = @Diagnosis, Updated_At = @Updated_At
                                              WHERE PatientID = @PatientID";
                     cmd = new SqlCommand(sqlUpdateCmd, cn);
 
@@ -155,6 +204,7 @@ namespace Hospital_Management_System.Control
                     cmd.Parameters.AddWithValue("@Gender", comboPatientGender.SelectedItem.ToString());
                     cmd.Parameters.AddWithValue("@Phone", textPatientPhoneNumber.Text);
                     cmd.Parameters.AddWithValue("@Address", textPatientAddress.Text);
+                    cmd.Parameters.AddWithValue("@DoctorID", comboPatientAssignedDoctor.SelectedValue != null ? comboPatientAssignedDoctor.SelectedValue.ToString() : (object)DBNull.Value);
                     cmd.Parameters.AddWithValue("@BloodType", comboPatientBloodType.SelectedItem.ToString());
                     cmd.Parameters.AddWithValue("@Allergies", textPatientAllergies.Text);
                     cmd.Parameters.AddWithValue("@Diagnosis", textPatientDiagnosis.Text);
@@ -241,6 +291,7 @@ namespace Hospital_Management_System.Control
 
                 textPatientPhoneNumber.Text = row.Cells["Phone"].Value?.ToString();
                 textPatientAddress.Text = row.Cells["Address"].Value?.ToString();
+                comboPatientAssignedDoctor.SelectedValue = row.Cells["DoctorID"].Value?.ToString();
                 comboPatientBloodType.SelectedItem = row.Cells["BloodType"].Value?.ToString();
                 textPatientAllergies.Text = row.Cells["Allergies"].Value?.ToString();
                 textPatientDiagnosis.Text = row.Cells["Diagnosis"].Value?.ToString();
@@ -252,5 +303,7 @@ namespace Hospital_Management_System.Control
             PatientsReportForm reportForm = new PatientsReportForm();
             reportForm.Show();
         }
+
+      
     }
 }
