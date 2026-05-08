@@ -42,7 +42,8 @@ namespace Hospital_Management_System.Control
         {
             try
             {
-                cn.Open();
+                if (cn.State == ConnectionState.Closed)
+                    cn.Open();
                 string query = @"SELECT DoctorID, FullName
                                  FROM Doctors
                                  WHERE Status = 'Active' AND Is_Deleted = 0
@@ -140,7 +141,8 @@ namespace Hospital_Management_System.Control
                     return;
                 }
 
-                cn.Open();
+                if (cn.State == ConnectionState.Closed)
+                    cn.Open();
                 String sqlInsertCmd = @"INSERT INTO Patients (PatientID, FullName, DOB, Gender, Phone, Address, DoctorID, BloodType, Allergies, Diagnosis)
                                        VALUES (@PatientID, @FullName, @DOB, @Gender, @Phone, @Address,@DoctorID, @BloodType, @Allergies, @Diagnosis)";
                 cmd = new SqlCommand(sqlInsertCmd, cn);
@@ -193,7 +195,8 @@ namespace Hospital_Management_System.Control
                 DialogResult result = MessageBox.Show("Are you sure you want to update this patient's information?", "Confirm Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    cn.Open();
+                    if (cn.State == ConnectionState.Closed)
+                        cn.Open();
                     String sqlUpdateCmd = @"UPDATE Patients SET FullName = @FullName, DOB = @DOB, Gender = @Gender, Phone = @Phone, Address = @Address,DoctorID = @DoctorID, BloodType = @BloodType, Allergies = @Allergies, Diagnosis = @Diagnosis, Updated_At = @Updated_At
                                              WHERE PatientID = @PatientID";
                     cmd = new SqlCommand(sqlUpdateCmd, cn);
@@ -243,7 +246,8 @@ namespace Hospital_Management_System.Control
                 DialogResult result = MessageBox.Show("Are you sure you want to delete this patient?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-                    cn.Open();
+                    if (cn.State == ConnectionState.Closed)
+                        cn.Open();
                     String sqlDeleteCmd = "UPDATE Patients SET Is_Deleted = 1, Updated_At = @Updated_At WHERE PatientID = @PatientID";
                     cmd = new SqlCommand(sqlDeleteCmd, cn);
 

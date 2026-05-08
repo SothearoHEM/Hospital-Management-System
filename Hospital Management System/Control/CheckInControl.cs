@@ -125,7 +125,8 @@ namespace Hospital_Management_System.Control
 
             try
             {
-                conn.Open();
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
                 string doctorID = textPatientDoctorCheckIn.Text.Split('-')[0].Trim();
                 string insertQuery = @"INSERT INTO Visits (PatientID, DoctorID, CheckInTime, RoomNo, Reason, Status)
                                        VALUES (@PatientID, @DoctorID, @CheckInTime, @RoomNo, @Reason, @Status)";

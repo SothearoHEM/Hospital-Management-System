@@ -17,6 +17,7 @@ namespace Hospital_Management_System.Forms
         public LoginForm()
         {
             InitializeComponent();
+            textPassword.UseSystemPasswordChar = true;
         }
 
         private void label1_Click(object sender, EventArgs e)

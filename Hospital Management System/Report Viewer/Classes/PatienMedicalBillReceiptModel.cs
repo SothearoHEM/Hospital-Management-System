@@ -18,6 +18,7 @@ namespace Hospital_Management_System.Report_Viewer.Classes
         public string RoomNo { get; set; }
         public DateTime CheckInDate { get; set; }
         public DateTime CheckOutDate { get; set; }
+        public string ReasonForVisit { get; set; }
         public string Diagnosis { get; set; }
         public string Prescription { get; set; }
         public DateTime FollowUpDate { get; set; }

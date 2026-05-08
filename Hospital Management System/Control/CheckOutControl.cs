@@ -141,7 +141,8 @@ namespace Hospital_Management_System.Control
                 DialogResult result = MessageBox.Show("Are you sure you want to check out this patient?", "Confirm Check Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    conn.Open();
+                    if (conn.State == ConnectionState.Closed)
+                        conn.Open();
                     string VisitID = textVisitID.Text;
                     string updateVisitQuery = @"UPDATE Visits 
                         SET CheckOutTime = @CheckOutTime, 
@@ -196,8 +197,16 @@ namespace Hospital_Management_System.Control
 
         private void Print_Patien_Receipt_btn_Click(object sender, EventArgs e)
         {
-            PatienMedicalBillReceipt r1 = new PatienMedicalBillReceipt();
-            r1.Show(); 
+            if (string.IsNullOrWhiteSpace(textVisitID.Text) || !int.TryParse(textVisitID.Text, out int visitId))
+            {
+                PatienMedicalBillReceipt r1 = new PatienMedicalBillReceipt();
+                r1.Show();
+            }
+            else
+            {
+                PatienMedicalBillReceipt r1 = new PatienMedicalBillReceipt(visitId, chackOutDate_checkOutForm.Value, textPrescription.Text, FollowUpData.Value);
+                r1.Show(); 
+            }
         }
     }
 }

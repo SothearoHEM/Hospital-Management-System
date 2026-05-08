@@ -94,9 +94,11 @@
     </Compile>
     <Compile Include="Control\CheckOutControl.cs">
       <SubType>UserControl</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Control\CheckOutControl.Designer.cs">
       <DependentUpon>CheckOutControl.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Control\DashhboradControl.cs">
       <SubType>UserControl</SubType>
@@ -171,6 +173,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\CheckOutControl.resx">
       <DependentUpon>CheckOutControl.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\DashhboradControl.resx">
       <DependentUpon>DashhboradControl.cs</DependentUpon>
@@ -215,7 +218,9 @@
     <EmbeddedResource Include="Report Viewer\WiZards\DoctorsWizard.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report Viewer\WiZards\PatienMedicalBillReceiptWizard.rdlc" />
+    <EmbeddedResource Include="Report Viewer\WiZards\PatienMedicalBillReceiptWizard.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report Viewer\WiZards\PatientsWizard.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
